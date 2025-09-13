@@ -1,103 +1,77 @@
-import Image from "next/image";
+import Image from 'next/image'
+import React from 'react'
+import SubjectArea from '@/components/home/SubjectArea'
 
-export default function Home() {
+
+function HomePage() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <div className='w-full min-h-screen'>
+      {/* Hero Section with Background */}
+      <section className='w-full min-h-screen relative overflow-hidden'>
+        {/* Background Image */}
+        <div className='absolute inset-0 z-0'>
+          <Image 
+            src="/bg.jpg" 
+            fill
+            className='object-cover' 
+            alt='background image'
+            priority
+          />
+          {/* Overlay for better text readability */}
+          <div className='absolute inset-0 bg-gradient-to-r from-white/80 via-white/60 to-transparent'></div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+        
+        {/* Content Container - Added padding top to account for fixed navbar */}
+        <div className='relative z-10 flex items-center min-h-screen pt-32 md:pt-40'>
+        {/* Left Side Content - IEDC Information */}
+        <div className='flex-1 px-4 md:px-8 lg:px-16'>
+          <div className='max-w-2xl'>            
+            {/* IEDC Full Form and Description */}
+            <div className='text-gray-800'>
+              <h1 className='text-4xl md:text-5xl lg:text-7xl font-extralight tracking-wide leading-tight mb-8'>
+                <span className='text-blue-600 font-medium'>I</span>nnovation and{' '}
+                <span className='text-blue-600 font-medium'>E</span>ntrepreneurship{' '}
+                <span className='text-blue-600 font-medium'>D</span>evelopment{' '}
+                <span className='text-blue-600 font-medium'>C</span>ell
+              </h1>
+              
+              
+              <div className='flex flex-col md:flex-row md:justify-between md:items-center gap-4 md:gap-6 mb-12'>
+                <div className='flex items-center gap-3'>
+                  <div className='w-1.5 h-1.5 bg-blue-500 rounded-full'></div>
+                  <span className='text-lg md:text-xl font-light text-gray-700 tracking-wide'>Innovation Hub</span>
+                </div>
+                <div className='flex items-center gap-3'>
+                  <div className='w-1.5 h-1.5 bg-blue-500 rounded-full'></div>
+                  <span className='text-lg md:text-xl font-light text-gray-700 tracking-wide'>Startup Incubator</span>
+                </div>
+                <div className='flex items-center gap-3'>
+                  <div className='w-1.5 h-1.5 bg-blue-500 rounded-full'></div>
+                  <span className='text-lg md:text-xl font-light text-gray-700 tracking-wide'>Entrepreneurship Development</span>
+                </div>
+              </div>
+              
+              <button className='bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white font-light tracking-wide py-4 px-10 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 text-lg'>
+                Learn More
+              </button>
+            </div>
+          </div>
+        </div>
+        
+        {/* Right side can be used for additional content or left empty for the background image to show */}
+        <div className='flex-1 hidden lg:block'>
+          {/* This space allows the background image to be visible on the right side */}
+        </div>
+        </div>
+      </section>
+      
+      {/* Subject Area Component */}
+      <SubjectArea />
+      
+      {/* Footer Component */}
+      
     </div>
-  );
+  )
 }
+
+export default HomePage
