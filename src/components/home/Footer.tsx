@@ -1,5 +1,6 @@
 import React from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
 
 const Footer = () => {
   return (
@@ -70,11 +71,11 @@ const Footer = () => {
             <div className='flex flex-col space-y-3'>
               
               {/* Button 1 */}
-              <button className='bg-white/5 hover:bg-white/10 backdrop-blur-sm border border-white/10 hover:border-blue-400/30 rounded-xl px-6 py-4 text-left transition-all duration-300 group hover:shadow-lg'>
+              <Link href={"/editorial-board"} className='bg-white/5 hover:bg-white/10 backdrop-blur-sm border border-white/10 hover:border-blue-400/30 rounded-xl px-6 py-4 text-left transition-all duration-300 group hover:shadow-lg'>
                 <div className='flex items-center justify-between'>
                   <div>
-                    <h5 className='font-medium text-slate-100 group-hover:text-blue-300'>About Us</h5>
-                    <p className='text-slate-400 text-sm font-light'>Lorem ipsum dolor sit amet</p>
+                    <h5 className='font-medium text-slate-100 group-hover:text-blue-300'>Editorial Board</h5>
+                    <p className='text-slate-400 text-sm font-light'>Information about the editorial Board</p>
                   </div>
                   <div className='text-slate-500 group-hover:text-blue-400 transition-colors'>
                     <svg className='w-5 h-5' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
@@ -82,14 +83,14 @@ const Footer = () => {
                     </svg>
                   </div>
                 </div>
-              </button>
+              </Link>
               
               {/* Button 2 */}
-              <button className='bg-white/5 hover:bg-white/10 backdrop-blur-sm border border-white/10 hover:border-blue-400/30 rounded-xl px-6 py-4 text-left transition-all duration-300 group hover:shadow-lg'>
+              <Link href={"/current-issue"} className='bg-white/5 hover:bg-white/10 backdrop-blur-sm border border-white/10 hover:border-blue-400/30 rounded-xl px-6 py-4 text-left transition-all duration-300 group hover:shadow-lg'>
                 <div className='flex items-center justify-between'>
                   <div>
-                    <h5 className='font-medium text-slate-100 group-hover:text-blue-300'>Research</h5>
-                    <p className='text-slate-400 text-sm font-light'>Consectetur adipiscing elit</p>
+                    <h5 className='font-medium text-slate-100 group-hover:text-blue-300'>Current Issue</h5>
+                    <p className='text-slate-400 text-sm font-light'>Explore the latest research from this issue.</p>
                   </div>
                   <div className='text-slate-500 group-hover:text-blue-400 transition-colors'>
                     <svg className='w-5 h-5' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
@@ -97,14 +98,14 @@ const Footer = () => {
                     </svg>
                   </div>
                 </div>
-              </button>
+              </Link>
               
               {/* Button 3 */}
               <button className='bg-white/5 hover:bg-white/10 backdrop-blur-sm border border-white/10 hover:border-blue-400/30 rounded-xl px-6 py-4 text-left transition-all duration-300 group hover:shadow-lg'>
                 <div className='flex items-center justify-between'>
                   <div>
-                    <h5 className='font-medium text-slate-100 group-hover:text-blue-300'>Programs</h5>
-                    <p className='text-slate-400 text-sm font-light'>Sed do eiusmod tempor</p>
+                    <h5 className='font-medium text-slate-100 group-hover:text-blue-300'>Archives</h5>
+                    <p className='text-slate-400 text-sm font-light'>Explore previously published articles from our journal archives.</p>
                   </div>
                   <div className='text-slate-500 group-hover:text-blue-400 transition-colors'>
                     <svg className='w-5 h-5' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
@@ -118,8 +119,8 @@ const Footer = () => {
               <button className='bg-white/5 hover:bg-white/10 backdrop-blur-sm border border-white/10 hover:border-blue-400/30 rounded-xl px-6 py-4 text-left transition-all duration-300 group hover:shadow-lg'>
                 <div className='flex items-center justify-between'>
                   <div>
-                    <h5 className='font-medium text-slate-100 group-hover:text-blue-300'>Contact</h5>
-                    <p className='text-slate-400 text-sm font-light'>Incididunt ut labore et</p>
+                    <h5 className='font-medium text-slate-100 group-hover:text-blue-300'>Contact Us</h5>
+                    <p className='text-slate-400 text-sm font-light'>Reach out to our editorial team for queries.</p>
                   </div>
                   <div className='text-slate-500 group-hover:text-blue-400 transition-colors'>
                     <svg className='w-5 h-5' fill='none' stroke='currentColor' viewBox='0 0 24 24'>

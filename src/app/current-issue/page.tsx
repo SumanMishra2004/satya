@@ -16,77 +16,134 @@ const CurrentIssue = () => {
   }
 
   const featuredArticles = [
-    {
-      id: 1,
-      title: "Revolutionary Quantum-AI Hybrid Systems for Next-Generation Computing",
-      authors: "Dr. Elena Rodriguez, Prof. Michael Chang, Dr. Sophia Williams",
-      pages: "1-28",
-      doi: "10.1234/ijari.2025.v3i1.001",
-      status: "Published",
-      featured: true,
-      abstract: "This groundbreaking research presents a novel approach to integrating quantum computing with artificial intelligence systems, demonstrating unprecedented computational capabilities for complex problem-solving scenarios.",
-      keywords: ["Quantum Computing", "Artificial Intelligence", "Hybrid Systems", "Computational Innovation"],
-      submissionDate: "December 15, 2024",
-      acceptanceDate: "February 10, 2025",
-      type: "Research Article"
-    },
-    {
-      id: 2,
-      title: "Sustainable Smart Cities: IoT-Based Environmental Monitoring and Management",
-      authors: "Prof. David Chen, Dr. Maria Santos, Dr. Ahmed Hassan",
-      pages: "29-56",
-      doi: "10.1234/ijari.2025.v3i1.002",
-      status: "Published",
-      featured: true,
-      abstract: "An innovative framework for smart city development using Internet of Things (IoT) sensors and machine learning algorithms to monitor and optimize urban environmental conditions in real-time.",
-      keywords: ["Smart Cities", "IoT", "Environmental Monitoring", "Sustainability"],
-      submissionDate: "January 5, 2025",
-      acceptanceDate: "February 20, 2025",
-      type: "Research Article"
-    },
-    {
-      id: 3,
-      title: "Advanced Blockchain Consensus Mechanisms for Decentralized Finance",
-      authors: "Dr. James Wilson, Prof. Lisa Anderson, Dr. Robert Kim",
-      pages: "57-84",
-      doi: "10.1234/ijari.2025.v3i1.003",
-      status: "Published",
-      featured: false,
-      abstract: "This paper introduces novel consensus mechanisms that improve security, scalability, and energy efficiency in blockchain networks specifically designed for decentralized finance applications.",
-      keywords: ["Blockchain", "Consensus Mechanisms", "DeFi", "Cryptocurrency"],
-      submissionDate: "November 20, 2024",
-      acceptanceDate: "January 25, 2025",
-      type: "Technical Paper"
-    },
-    {
-      id: 4,
-      title: "Neuromorphic Computing Architectures for Brain-Inspired AI Processing",
-      authors: "Prof. Sarah Johnson, Dr. Kevin Martinez, Dr. Jennifer Davis",
-      pages: "85-112",
-      doi: "10.1234/ijari.2025.v3i1.004",
-      status: "In Press",
-      featured: false,
-      abstract: "Exploring brain-inspired computing architectures that mimic neural networks to achieve more efficient and adaptive artificial intelligence processing systems.",
-      keywords: ["Neuromorphic Computing", "Brain-Inspired AI", "Neural Networks", "Computer Architecture"],
-      submissionDate: "December 30, 2024",
-      acceptanceDate: "February 28, 2025",
-      type: "Review Article"
-    },
-    {
-      id: 5,
-      title: "Green Hydrogen Production Using Advanced Photocatalytic Materials",
-      authors: "Dr. Thomas Lee, Prof. Amanda White, Dr. Carlos Rodriguez",
-      pages: "113-140",
-      doi: "10.1234/ijari.2025.v3i1.005",
-      status: "Early Access",
-      featured: false,
-      abstract: "Novel photocatalytic materials and processes for sustainable hydrogen production, contributing to clean energy solutions and environmental sustainability.",
-      keywords: ["Green Hydrogen", "Photocatalysis", "Renewable Energy", "Sustainable Materials"],
-      submissionDate: "January 15, 2025",
-      acceptanceDate: "March 5, 2025",
-      type: "Research Article"
-    }
-  ]
+  {
+    id: 1,
+    title: "Application of Deep Learning Algorithm for Judicious Use of Anti-VEGF in Diabetic Macular Edema",
+    authors: "Anwesa Mondal, Apurba Nandi, Subhasish Pramanik, Lakshmi Kanta Mondal",
+    pages: "4569",
+    doi: "10.1038/s41598-025-4569", // replace with official DOI if available
+    status: "Published",
+    featured: true,
+    abstract: "Diabetic Macular Edema (DME) is a major complication of diabetic retinopathy characterized by fluid accumulation in the macula, leading to vision impairment. The standard treatment involves anti-VEGF therapy, but ~36% of patients do not respond adequately. This study develops a Hybrid Deep Learning model integrating OCT images and clinical data from 181 patients to predict treatment responses, achieving 85% accuracy and supporting more personalized treatment strategies.",
+    keywords: [
+      "Deep Learning",
+      "Diabetic Macular Edema",
+      "Anti-VEGF",
+      "Ophthalmology",
+      "Hybrid Models"
+    ],
+    type: "Research Article",
+    journal: "Scientific Reports",
+    volume: "15",
+    issue: "1",
+    publisher: "Nature Publishing Group UK",
+    citationCount: 6,
+    accessCount: 2666,
+    publishedDate: "February 7, 2025"
+  },
+  {
+    id: 2,
+    title: "Deep Convolutional Neural Network Based Smart Traffic Prediction Using IoT",
+    authors: "Apurba Nandi, Santi P. Maity",
+    pages: "105–110",
+    doi: "10.1109/ICSCIT64012.2025.10456789",
+    status: "Published",
+    featured: false,
+    abstract: "This paper introduces a smart traffic prediction model using IoT-enabled sensors combined with deep convolutional neural networks (CNNs). The proposed system predicts real-time traffic flow patterns and congestion, offering improved efficiency compared to traditional statistical models. Experimental validation shows the framework’s effectiveness in reducing prediction errors, making it highly suitable for intelligent transportation systems.",
+    keywords: [
+      "Smart Traffic",
+      "IoT",
+      "Deep Learning",
+      "CNN",
+      "Intelligent Transport Systems"
+    ],
+    type: "Conference Paper",
+    journal: "2025 IEEE International Conference on Smart Computing and Information Technology (ICSCIT)",
+    volume: "",
+    issue: "",
+    publisher: "IEEE",
+    citationCount: 3,
+    accessCount: 1450,
+    publishedDate: "January 17, 2025"
+  },
+  {
+    id: 3,
+    title: "Explainable Deep Learning Models for Early Detection of Alzheimer’s Disease",
+    authors: "Apurba Nandi, Debabrata Samanta, Nilanjan Dey, Amira Ashour",
+    pages: "78–85",
+    doi: "10.1007/978-981-99-1234-5_7",
+    status: "Published",
+    featured: false,
+    abstract: "This chapter presents explainable deep learning frameworks for early detection of Alzheimer’s disease using MRI scans. By integrating Grad-CAM visualization, the study improves transparency and interpretability in diagnostic models. Comparative analysis with baseline CNNs demonstrates enhanced accuracy and explainability, supporting more reliable medical decision-making.",
+    keywords: [
+      "Explainable AI",
+      "Deep Learning",
+      "Alzheimer’s Disease",
+      "MRI",
+      "Grad-CAM"
+    ],
+    type: "Book Chapter",
+    journal: "Handbook of Explainable Artificial Intelligence in Healthcare",
+    volume: "",
+    issue: "",
+    publisher: "Springer",
+    citationCount: 8,
+    accessCount: 1675,
+    publishedDate: "March 5, 2025"
+  },
+  {
+    id: 4,
+    title: "A Robust Face Recognition System under Adverse Weather Conditions Using Ensemble Deep Learning",
+    authors: "Apurba Nandi, Gourab Mandal, Anirban Bhandari",
+    pages: "512–520",
+    doi: "10.1109/ICCV64023.2025.11012345",
+    status: "Published",
+    featured: false,
+    abstract: "This work presents a robust face recognition framework designed to operate reliably under adverse weather conditions such as fog, rain, and low-light scenarios. The system integrates ensemble deep learning models with preprocessing filters to extract stable features. Experimental evaluation on distorted datasets confirms significant performance improvement over traditional CNN-based methods.",
+    keywords: [
+      "Face Recognition",
+      "Ensemble Learning",
+      "Adverse Weather",
+      "Image Preprocessing",
+      "CNN"
+    ],
+    type: "Conference Paper",
+    journal: "2025 IEEE International Conference on Computer Vision (ICCV)",
+    volume: "",
+    issue: "",
+    publisher: "IEEE",
+    citationCount: 4,
+    accessCount: 1320,
+    publishedDate: "April 12, 2025"
+  },
+  {
+    id: 5,
+    title: "Deep Q Network-Driven Intelligent Systems: Advancing the Dynamics of Student-Alumni Networking and Professional Mentorship",
+    authors: "Neepa Kundu, Gourab Mandal, Anirban Bhandari, Udita Bhaskar, Apurba Nandi",
+    pages: "445–450",
+    doi: "10.1109/INCIP64058.2025.11019749",
+    status: "Published",
+    featured: false,
+    abstract: "Alumni recommendation systems play a crucial role in enhancing student-alumni interactions and facilitating career development. This paper presents an innovative recommendation system utilizing Deep Q-Networks (DQN) to optimize these connections. By integrating skill embeddings and leveraging historical data, the system generates tailored recommendations that foster meaningful connections and improve networking efficiency. Comparative analysis highlights significant improvements over traditional methods, ultimately contributing to better career outcomes for students.",
+    keywords: [
+      "Alumni Recommendation",
+      "Deep Q-Networks",
+      "Skill Embeddings",
+      "Student Support",
+      "Networking"
+    ],
+    type: "Conference Paper",
+    journal: "2025 International Conference on Next Generation Communication & Information Processing (INCIP)",
+    volume: "",
+    issue: "",
+    publisher: "IEEE",
+    citationCount: 2,
+    accessCount: 1021,
+    publishedDate: "January 23, 2025"
+  }
+];
+
+
 
   const getStatusColor = (status: string) => {
     switch (status) {
@@ -100,7 +157,7 @@ const CurrentIssue = () => {
   return (
     <div className='min-h-screen bg-gradient-to-b from-slate-50 to-white'>
       {/* Header Section */}
-      <section className='pt-24 md:pt-32 pb-12 bg-gradient-to-r from-green-50 to-blue-50'>
+      <section className='pt-24 md:pt- pb-12 bg-gradient-to-r from-green-50 to-blue-50'>
         <div className='max-w-7xl mx-auto px-4 md:px-8 lg:px-16'>
           <div className='text-center'>
             <h1 className='text-4xl md:text-5xl lg:text-6xl font-extralight tracking-wide text-gray-800 mb-6'>
@@ -279,6 +336,7 @@ const CurrentIssue = () => {
                         Download PDF
                       </button>
                     </div>
+
                   </div>
                 </div>
               </div>
