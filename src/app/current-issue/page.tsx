@@ -1,13 +1,13 @@
 import React from 'react'
-import { Calendar, Download, Eye, FileText, Clock, Star, Users, ExternalLink } from 'lucide-react'
+import { Calendar, Download, Eye, FileText, Clock, Star, Users, ExternalLink, BookUser } from 'lucide-react'
 import Link from 'next/link'
 
 const CurrentIssue = () => {
   const currentIssue = {
     volume: "Volume 3",
     issue: "Issue 1",
-    year: "XXXX",
-    month: "XXXX",
+    year: "2025",
+    month: "October",
     status: "Current Issue",
     publishDate: "XXXXXXXXXXXXXXX",
     coverImage: "/iedc-logo.jpg",
@@ -76,13 +76,18 @@ const CurrentIssue = () => {
                     <Calendar className='w-4 h-4' />
                     <span>{currentIssue.month} {currentIssue.year}</span>
                   </div>
+                  
                   <div className='flex items-center gap-3 text-sm'>
                     <FileText className='w-4 h-4' />
-                    <span>{currentIssue.totalArticles} Articles</span>
+                    <span>Frequency of Publication: Bi-Annual</span>
                   </div>
                   <div className='flex items-center gap-3 text-sm'>
                     <Star className='w-4 h-4' />
                     <span>Special Issue</span>
+                  </div>
+                  <div className='flex items-center gap-3 text-sm'>
+                    <BookUser className='w-4 h-4' />
+                    <span>Language :English</span>
                   </div>
                 </div>
 
@@ -106,6 +111,9 @@ const CurrentIssue = () => {
                     <div>
                       <h4 className='font-medium text-gray-800 mb-2'>Publication Details</h4>
                       <div className='space-y-1 text-gray-600'>
+                        <p> Mode: Online</p>
+                        <p>Subject of Publication: Reseant Trends in Engineering and Technology</p>
+                        
                         <p>Published: {currentIssue.publishDate}</p>
                         <p>ISSN: XXXX-XXXX (Online)</p>
                         <p>ISSN: XXXX-XXXX (Print)</p>
