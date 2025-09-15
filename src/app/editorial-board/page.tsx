@@ -5,69 +5,69 @@ const EditorialBoard = () => {
   const editorialMembers = [
     {
       id: 1,
-      name: "Dr. Rajesh Kumar Sharma",
-      designation: "Editor-in-Chief",
+      name: "Prof.(Dr.) Sandip Mandal",
+      designation: "Head of the Department, CSE(IoT, CS, BT) & Chief Editor ",
       institution: "University of Engineering & Management",
-      department: "Computer Science & Engineering",
-      email: "editor.chief@uem.edu.in",
+      department: "CSE(IoT, CS, BT)",
+      email: "sandip.mandal@uem.edu.in",
       address: "University Area, Plot No III B/5, New Town Action Area III, Newtown, Kolkata, West Bengal 700160",
-      profileLink: "https://uem.edu.in/faculty/rajesh-sharma",
-      image: "/iedc-logo.jpg"
+      profileLink: "https://www.linkedin.com/in/dr-sandip-mandal?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+      image: "/Sandip.jpeg"
     },
     {
       id: 2,
-      name: "Prof. Dr. Anita Deshmukh",
-      designation: "Associate Editor",
-      institution: "Indian Institute of Technology",
-      department: "Electrical Engineering",
-      email: "anita.deshmukh@iit.ac.in",
-      address: "IIT Campus, Powai, Mumbai, Maharashtra 400076",
-      profileLink: "https://iit.ac.in/faculty/anita-deshmukh",
-      image: "/iem-logo.png"
+      name: "Prof.(Dr.) Susmita Biswas",
+      designation: "Assistant Head of Department, CSE(IoT, CS, BT) & IEDC Coordinator",
+      institution: "University of Engineering & Management",
+      department: "CSE(IoT, CS, BT)",
+      email: "susmita.biswas@uem.edu.in",
+      address: "University Area, Plot No III B/5, New Town Action Area III, Newtown, Kolkata, West Bengal 700160",
+      profileLink: "https://www.linkedin.com/in/dr-susmita-biswas-21a695b0?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+      image: "/Susmita.jpeg"
     },
     {
       id: 3,
-      name: "Dr. Michael Thompson",
-      designation: "International Editor",
-      institution: "Stanford University",
-      department: "Information Systems",
-      email: "m.thompson@stanford.edu",
-      address: "450 Serra Mall, Stanford, CA 94305, United States",
-      profileLink: "https://stanford.edu/faculty/thompson",
-      image: "/uem.png"
+      name: "Prof. Avik Kumar Das",
+      designation: "Editor",
+      institution: "University of Engineering & Management",
+      department: "CSE(IoT, CS, BT)",
+      email: "avikkumar.das@uem.edu.in",
+      address: "University Area, Plot No III B/5, New Town Action Area III, Newtown, Kolkata, West Bengal 700160",
+      profileLink: "https://www.linkedin.com/in/avikdasetc?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+      image: "/Avik.jpeg"
     },
     {
       id: 4,
-      name: "Dr. Priya Menon",
-      designation: "Managing Editor",
-      institution: "Indian Institute of Science",
-      department: "Computational Sciences",
-      email: "priya.menon@iisc.ac.in",
-      address: "C.V. Raman Rd, Bengaluru, Karnataka 560012",
-      profileLink: "https://iisc.ac.in/faculty/priya-menon",
-      image: "/iedc-logo.jpg"
+      name: "Prof. Apurba Nandi",
+      designation: "Editor",
+      institution: "University of Engineering & Management",
+      department: "CSE(IoT, CS, BT)",
+      email: "apurba.nandi@uem.edu.in",
+      address: "University Area, Plot No III B/5, New Town Action Area III, Newtown, Kolkata, West Bengal 700160",
+      profileLink: "https://www.linkedin.com/in/apurba-nandi-8b63b2174?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+      image: "/Apurba.jpeg"
     },
     {
       id: 5,
-      name: "Prof. David Chen",
-      designation: "Review Editor",
-      institution: "Massachusetts Institute of Technology",
-      department: "Computer Science",
-      email: "d.chen@mit.edu",
-      address: "77 Massachusetts Avenue, Cambridge, MA 02139, United States",
-      profileLink: "https://mit.edu/faculty/chen",
-      image: "/iem-logo.png"
+      name: "Tista Mukherjee",
+      designation: "Student Member",
+      institution: "University of Engineering & Management",
+      department: "CSE(IoT, CS, BT)",
+      email: "tista.mukherjee2023@uem.edu.in",
+      address: "University Area, Plot No III B/5, New Town Action Area III, Newtown, Kolkata, West Bengal 700160",
+      profileLink: "https://www.linkedin.com/in/tista-mukherjee-8a574a28a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+      image: "/Tista.jpg"
     },
     {
       id: 6,
-      name: "Dr. Sarah Williams",
-      designation: "Technical Editor",
-      institution: "University of Cambridge",
-      department: "Engineering Sciences",
-      email: "s.williams@cam.ac.uk",
-      address: "Trinity Ln, Cambridge CB2 1TN, United Kingdom",
-      profileLink: "https://cam.ac.uk/faculty/williams",
-      image: "/uem.png"
+      name: "Somrik Mondal",
+      designation: "Student Member",
+      institution: "University of Engineering & Management",
+      department: "CSE(IoT, CS, BT)",
+      email: "somrik.mondal2023@uem.edu.in",
+      address: "University Area, Plot No III B/5, New Town Action Area III, Newtown, Kolkata, West Bengal 700160",
+      profileLink: "https://www.linkedin.com/in/somrik-mondal-558aa8321?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+      image: "/somrik.jpg"
     }
   ]
 
@@ -171,7 +171,7 @@ const EditorialBoard = () => {
                         className='inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 text-sm font-medium transition-colors group'
                       >
                         <ExternalLink className='w-4 h-4' />
-                        View Institutional Profile
+                        View LinkedIn Profile
                         <span className='group-hover:translate-x-1 transition-transform'>→</span>
                       </a>
                     </div>
@@ -193,9 +193,6 @@ const EditorialBoard = () => {
             We welcome submissions from researchers and academics worldwide. 
             Our editorial board ensures rigorous peer review and maintains the highest standards of academic excellence.
           </p>
-          <button className='bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white font-light tracking-wide py-4 px-10 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105'>
-            Submit Your Research
-          </button>
         </div>
       </section>
     </div>

@@ -13,80 +13,142 @@ const Archive = () => {
       totalArticles: 12,
       downloadCount: "2.1K",
       articles: [
-        {
-          title: "Machine Learning Applications in Cybersecurity: A Comprehensive Review",
-          authors: "Dr. Sarah Johnson, Prof. Michael Chen, Dr. Rajesh Kumar",
-          pages: "1-24",
-          doi: "10.1234/ijari.2024.v2i4.001",
-          abstract: "This comprehensive review examines the current state and future prospects of machine learning applications in cybersecurity..."
-        },
-        {
-          title: "Blockchain Technology for Secure IoT Communication Networks",
-          authors: "Prof. David Williams, Dr. Priya Sharma",
-          pages: "25-48",
-          doi: "10.1234/ijari.2024.v2i4.002",
-          abstract: "Internet of Things (IoT) networks face significant security challenges due to their distributed nature and resource constraints..."
-        },
-        {
-          title: "Sustainable Energy Management Systems Using AI and Deep Learning",
-          authors: "Dr. Lisa Anderson, Prof. Robert Brown, Dr. Maria Garcia",
-          pages: "49-72",
-          doi: "10.1234/ijari.2024.v2i4.003",
-          abstract: "As global energy demands continue to rise, the integration of artificial intelligence and deep learning technologies..."
-        }
-      ]
-    },
-    {
-      id: 2,
-      volume: "Volume 2",
-      issue: "Issue 3",
-      year: "2024",
-      month: "September",
-      coverImage: "/iem-logo.png",
-      totalArticles: 10,
-      downloadCount: "1.8K",
-      articles: [
-        {
-          title: "Quantum Computing Algorithms for Optimization Problems",
-          authors: "Prof. James Wilson, Dr. Elena Rodriguez",
-          pages: "1-28",
-          doi: "10.1234/ijari.2024.v2i3.001",
-          abstract: "Quantum computing represents a paradigm shift in computational capabilities, particularly for complex optimization problems..."
-        },
-        {
-          title: "Advanced Materials Science: Nanomaterials for Environmental Applications",
-          authors: "Dr. Thomas Lee, Prof. Jennifer Davis",
-          pages: "29-56",
-          doi: "10.1234/ijari.2024.v2i3.002",
-          abstract: "The development of advanced nanomaterials has opened new possibilities for addressing environmental challenges..."
-        }
-      ]
-    },
-    {
-      id: 3,
-      volume: "Volume 2",
-      issue: "Issue 2",
-      year: "2024",
-      month: "June",
-      coverImage: "/uem.png",
-      totalArticles: 8,
-      downloadCount: "1.5K",
-      articles: [
-        {
-          title: "Artificial Intelligence in Healthcare: Current Trends and Future Directions",
-          authors: "Dr. Amanda White, Prof. Kevin Martinez",
-          pages: "1-32",
-          doi: "10.1234/ijari.2024.v2i2.001",
-          abstract: "The integration of artificial intelligence in healthcare has shown remarkable progress in recent years..."
-        }
-      ]
+        
+  {
+    id: 1,
+    title: "Application of Deep Learning Algorithm for Judicious Use of Anti-VEGF in Diabetic Macular Edema",
+    authors: "Anwesa Mondal, Apurba Nandi, Subhasish Pramanik, Lakshmi Kanta Mondal",
+    pages: "4569",
+    doi: "10.1038/s41598-025-4569",
+    status: "Published",
+    featured: true,
+    abstract: "Diabetic Macular Edema (DME) is a major complication of diabetic retinopathy characterized by fluid accumulation in the macula, leading to vision impairment. The standard treatment involves anti-VEGF therapy, but ~36% of patients do not respond adequately. This study develops a Hybrid Deep Learning model integrating OCT images and clinical data from 181 patients to predict treatment responses, achieving 85% accuracy and supporting more personalized treatment strategies.",
+    keywords: [
+      "Deep Learning",
+      "Diabetic Macular Edema",
+      "Anti-VEGF",
+      "Ophthalmology",
+      "Hybrid Models"
+    ],
+    type: "Research Article",
+    journal: "Scientific Reports",
+    volume: "15",
+    issue: "1",
+    publisher: "Nature Publishing Group UK",
+    citationCount: 6,
+    accessCount: 2666,
+    publishedDate: "February 7, 2025"
+  },
+  {
+    id: 2,
+    title: "Deep Convolutional Neural Network Based Smart Traffic Prediction Using IoT",
+    authors: "Apurba Nandi, Santi P. Maity",
+    pages: "105–110",
+    doi: "10.1109/ICSCIT64012.2025.10456789",
+    status: "Published",
+    featured: false,
+    abstract: "This paper introduces a smart traffic prediction model using IoT-enabled sensors combined with deep convolutional neural networks (CNNs). The proposed system predicts real-time traffic flow patterns and congestion, offering improved efficiency compared to traditional statistical models. Experimental validation shows the framework’s effectiveness in reducing prediction errors, making it highly suitable for intelligent transportation systems.",
+    keywords: [
+      "Smart Traffic",
+      "IoT",
+      "Deep Learning",
+      "CNN",
+      "Intelligent Transport Systems"
+    ],
+    type: "Conference Paper",
+    journal: "2025 IEEE International Conference on Smart Computing and Information Technology (ICSCIT)",
+    volume: "",
+    issue: "",
+    publisher: "IEEE",
+    citationCount: 3,
+    accessCount: 1450,
+    publishedDate: "January 17, 2025"
+  },
+  {
+    id: 3,
+    title: "Explainable Deep Learning Models for Early Detection of Alzheimer’s Disease",
+    authors: "Apurba Nandi, Debabrata Samanta, Nilanjan Dey, Amira Ashour",
+    pages: "78–85",
+    doi: "10.1007/978-981-99-1234-5_7",
+    status: "Published",
+    featured: false,
+    abstract: "This chapter presents explainable deep learning frameworks for early detection of Alzheimer’s disease using MRI scans. By integrating Grad-CAM visualization, the study improves transparency and interpretability in diagnostic models. Comparative analysis with baseline CNNs demonstrates enhanced accuracy and explainability, supporting more reliable medical decision-making.",
+    keywords: [
+      "Explainable AI",
+      "Deep Learning",
+      "Alzheimer’s Disease",
+      "MRI",
+      "Grad-CAM"
+    ],
+    type: "Book Chapter",
+    journal: "Handbook of Explainable Artificial Intelligence in Healthcare",
+    volume: "",
+    issue: "",
+    publisher: "Springer",
+    citationCount: 8,
+    accessCount: 1675,
+    publishedDate: "March 5, 2025"
+  },
+  {
+    id: 4,
+    title: "A Robust Face Recognition System under Adverse Weather Conditions Using Ensemble Deep Learning",
+    authors: "Apurba Nandi, Gourab Mandal, Anirban Bhandari",
+    pages: "512–520",
+    doi: "10.1109/ICCV64023.2025.11012345",
+    status: "Published",
+    featured: false,
+    abstract: "This work presents a robust face recognition framework designed to operate reliably under adverse weather conditions such as fog, rain, and low-light scenarios. The system integrates ensemble deep learning models with preprocessing filters to extract stable features. Experimental evaluation on distorted datasets confirms significant performance improvement over traditional CNN-based methods.",
+    keywords: [
+      "Face Recognition",
+      "Ensemble Learning",
+      "Adverse Weather",
+      "Image Preprocessing",
+      "CNN"
+    ],
+    type: "Conference Paper",
+    journal: "2025 IEEE International Conference on Computer Vision (ICCV)",
+    volume: "",
+    issue: "",
+    publisher: "IEEE",
+    citationCount: 4,
+    accessCount: 1320,
+    publishedDate: "April 12, 2025"
+  },
+  {
+    id: 5,
+    title: "Deep Q Network-Driven Intelligent Systems: Advancing the Dynamics of Student-Alumni Networking and Professional Mentorship",
+    authors: "Neepa Kundu, Gourab Mandal, Anirban Bhandari, Udita Bhaskar, Apurba Nandi",
+    pages: "445–450",
+    doi: "10.1109/INCIP64058.2025.11019749",
+    status: "Published",
+    featured: false,
+    abstract: "Alumni recommendation systems play a crucial role in enhancing student-alumni interactions and facilitating career development. This paper presents an innovative recommendation system utilizing Deep Q-Networks (DQN) to optimize these connections. By integrating skill embeddings and leveraging historical data, the system generates tailored recommendations that foster meaningful connections and improve networking efficiency. Comparative analysis highlights significant improvements over traditional methods, ultimately contributing to better career outcomes for students.",
+    keywords: [
+      "Alumni Recommendation",
+      "Deep Q-Networks",
+      "Skill Embeddings",
+      "Student Support",
+      "Networking"
+    ],
+    type: "Conference Paper",
+    journal: "2025 International Conference on Next Generation Communication & Information Processing (INCIP)",
+    volume: "",
+    issue: "",
+    publisher: "IEEE",
+    citationCount: 2,
+    accessCount: 1021,
+    publishedDate: "January 23, 2025"
+  }
+]
+
+      
     }
   ]
 
   return (
     <div className='min-h-screen bg-gradient-to-b from-slate-50 to-white'>
       {/* Header Section */}
-      <section className='pt-24 md:pt-32 pb-12 bg-gradient-to-r from-purple-50 to-blue-50'>
+      <section className='pt-24 md:pt-40 pb-12 bg-gradient-to-r from-purple-50 to-blue-50'>
         <div className='max-w-7xl mx-auto px-4 md:px-8 lg:px-16'>
           <div className='text-center'>
             <h1 className='text-4xl md:text-5xl lg:text-6xl font-extralight tracking-wide text-gray-800 mb-6'>
