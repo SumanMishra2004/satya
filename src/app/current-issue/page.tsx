@@ -1,16 +1,17 @@
 import React from 'react'
 import { Calendar, Download, Eye, FileText, Clock, Star, Users, ExternalLink } from 'lucide-react'
+import Link from 'next/link'
 
 const CurrentIssue = () => {
   const currentIssue = {
     volume: "Volume 3",
     issue: "Issue 1",
-    year: "2025",
-    month: "March",
+    year: "XXXX",
+    month: "XXXX",
     status: "Current Issue",
-    publishDate: "March 15, 2025",
+    publishDate: "XXXXXXXXXXXXXXX",
     coverImage: "/iedc-logo.jpg",
-    totalArticles: 15,
+    totalArticles: "X",
     theme: "Satya Vision Chronicles",
     description: "This special issue focuses on cutting-edge research in emerging technologies, artificial intelligence, and sustainable innovation solutions."
   }
@@ -106,18 +107,14 @@ const CurrentIssue = () => {
                       <h4 className='font-medium text-gray-800 mb-2'>Publication Details</h4>
                       <div className='space-y-1 text-gray-600'>
                         <p>Published: {currentIssue.publishDate}</p>
-                        <p>ISSN: 2789-1234 (Online)</p>
-                        <p>ISSN: 2789-5678 (Print)</p>
+                        <p>ISSN: XXXX-XXXX (Online)</p>
+                        <p>ISSN: XXXX-XXXX (Print)</p>
                       </div>
                     </div>
                     
                     <div>
-                      <h4 className='font-medium text-gray-800 mb-2'>Editorial Information</h4>
-                      <div className='space-y-1 text-gray-600'>
-                        <p>Editor-in-Chief: Dr. Rajesh Kumar</p>
-                        <p>Guest Editor: Prof. Elena Rodriguez</p>
-                        <p>Pages: 1-140</p>
-                      </div>
+                      <Link href={"/editorial-board"} className='font-medium text-blue-800 mb-2 text-xl'>Editorial Information</Link>
+                      
                     </div>
                   </div>
                 </div>
