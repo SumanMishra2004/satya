@@ -14,13 +14,13 @@ import {
 
 const Contact = () => {
   const contactInfo = {
-    address: `IEDC Innovation Hub
+    address: `SATYAMEBA Research Center
 University of Engineering & Management
 New Town, Kolkata - 700160
 West Bengal, India`,
     phone: "+91-33-6600-1234",
-    email: "iedciotlab@gmail.com",
-    website: "www.iedc-journal.org",
+    email: "satyameba@uem.edu.in",
+    website: "www.satyameba-journal.org",
     workingHours: `Monday - Friday: 9:00 AM - 6:00 PM
 Saturday: 9:00 AM - 1:00 PM
 Sunday: Closed`
@@ -41,7 +41,7 @@ Sunday: Closed`
     {
       id: 2,
       name: "Prof.(Dr.) Susmita Biswas",
-      designation: "Assistant Head of Department, CSE(IoT, CS, BT) & IEDC Coordinator",
+      designation: "Assistant Head of Department, CSE(IoT, CS, BT) & SATYAMEBA Coordinator",
       institution: "University of Engineering & Management",
       department: "CSE(IoT, CS, BT)",
       email: "susmita.biswas@uem.edu.in",

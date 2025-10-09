@@ -208,7 +208,33 @@ export const satyamebaServices = {
           id: "iaas",
           name: "IaaS",
           description: "Infrastructure as a Service",
-          icon: "server"
+          icon: "server",
+          subServices: [
+            {
+              id: "iaas-vm",
+              name: "Virtual Machines",
+              description: "Scalable virtual machine instances",
+              icon: "server"
+            },
+            {
+              id: "iaas-storage",
+              name: "Storage Services",
+              description: "Cloud storage and backup solutions",
+              icon: "hard-drive"
+            },
+            {
+              id: "iaas-network",
+              name: "Network Services",
+              description: "Virtual networking and load balancing",
+              icon: "network"
+            },
+            {
+              id: "iaas-security",
+              name: "Security Services",
+              description: "Infrastructure security and monitoring",
+              icon: "shield"
+            }
+          ]
         },
         {
           id: "paas",
@@ -261,6 +287,37 @@ export const satyamebaServices = {
       name: "UPS Power Supply",
       description: "Uninterruptible power supply for continuous operation",
       icon: "power"
+    }
+  ]
+};
+
+export const configurationServices = {
+  title: "CONFIGURATION",
+  fullForm: "System Configuration and Management Services",
+  services: [
+    {
+      id: 1,
+      name: "Hardware Configuration",
+      description: "Server and hardware setup management",
+      icon: "cpu"
+    },
+    {
+      id: 2,
+      name: "Network Configuration",
+      description: "Network settings and connectivity management",
+      icon: "network"
+    },
+    {
+      id: 3,
+      name: "Software Configuration",
+      description: "Application and system software configuration",
+      icon: "server"
+    },
+    {
+      id: 4,
+      name: "More",
+      description: "Additional configuration options and services",
+      icon: "circle-ellipsis"
     }
   ]
 };
