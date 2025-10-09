@@ -56,7 +56,7 @@ const SubjectArea = () => {
             <div className="bg-[#FDF0D5]/95 backdrop-blur-sm rounded-2xl p-6 lg:p-8 shadow-lg border border-[#669BBC] sticky top-16 md:top-36 z-10">
               <div className="relative aspect-[4/3] w-full mb-4 rounded-xl overflow-hidden">
                 <Image
-                  src="/Reseach.png"
+                  src="/new.jpg"
                   alt="Supercomputing Research"
                   fill
                   className="object-cover"
@@ -71,7 +71,7 @@ const SubjectArea = () => {
             <div className="bg-[#FDF0D5]/95 backdrop-blur-sm rounded-2xl p-6 lg:p-8 shadow-lg border border-[#669BBC] sticky top-16 md:top-36 z-20">
               <div className="relative aspect-[4/3] w-full mb-4 rounded-xl overflow-hidden">
                 <Image
-                  src="/Innovation_focus.jpg"
+                  src="/new2.jpg"
                   alt="AI Acceleration"
                   fill
                   className="object-cover"
@@ -86,7 +86,7 @@ const SubjectArea = () => {
             <div className="bg-[#FDF0D5]/95 backdrop-blur-sm rounded-2xl p-6 lg:p-8 shadow-lg border border-[#669BBC] sticky top-16 md:top-36 z-30">
               <div className="relative aspect-[4/3] w-full mb-4 rounded-xl overflow-hidden">
                 <Image
-                  src="/Future_prospects.jpg"
+                  src="/gpu.jpg"
                   alt="Multi-GPU Computing"
                   fill
                   className="object-cover"
