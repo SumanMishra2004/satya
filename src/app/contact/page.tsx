@@ -26,41 +26,7 @@ Saturday: 9:00 AM - 1:00 PM
 Sunday: Closed`
   }
 
-  const editorialOffices = [
-    {
-      id: 1,
-      name: "Prof.(Dr.) Sandip Mandal",
-      designation: "Head of the Department, CSE(IoT, CS, BT) & Chief Editor",
-      institution: "University of Engineering & Management",
-      department: "CSE(IoT, CS, BT)",
-      email: "sandip.mandal@uem.edu.in",
-      address: "University Area, Plot No III B/5, New Town Action Area III, Newtown, Kolkata, West Bengal 700160",
-      profileLink: "https://www.linkedin.com/in/dr-sandip-mandal?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-      image: "/Sandip.jpeg"
-    },
-    {
-      id: 2,
-      name: "Prof.(Dr.) Susmita Biswas",
-      designation: "Assistant Head of Department, CSE(IoT, CS, BT) & SATYAMEBA Coordinator",
-      institution: "University of Engineering & Management",
-      department: "CSE(IoT, CS, BT)",
-      email: "susmita.biswas@uem.edu.in",
-      address: "University Area, Plot No III B/5, New Town Action Area III, Newtown, Kolkata, West Bengal 700160",
-      profileLink: "https://www.linkedin.com/in/dr-susmita-biswas-21a695b0?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-      image: "/Susmita.jpeg"
-    },
-    {
-      id: 3,
-      name: "Prof. Avik Kumar Das",
-      designation: "Editor",
-      institution: "University of Engineering & Management",
-      department: "CSE(IoT, CS, BT)",
-      email: "avikkumar.das@uem.edu.in",
-      address: "University Area, Plot No III B/5, New Town Action Area III, Newtown, Kolkata, West Bengal 700160",
-      profileLink: "https://www.linkedin.com/in/avikdasetc?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-      image: "/Avik.jpeg"
-    }
-  ]
+ 
 
   return (
     <div className='min-h-screen bg-gradient-to-b from-slate-50 to-white'>
@@ -186,42 +152,7 @@ Sunday: Closed`
       </section>
 
       {/* Editorial Offices */}
-      <section className='py-16 bg-gradient-to-b from-gray-50 to-white'>
-        <div className='max-w-7xl mx-auto px-4 md:px-8 lg:px-16'>
-          <div className='text-center mb-12'>
-            <h2 className='text-3xl md:text-4xl font-light text-gray-800 mb-4'>Editorial Offices</h2>
-            <p className='text-lg text-gray-600 font-light'>Direct contact with our editorial team members</p>
-          </div>
-
-          <div className='grid md:grid-cols-3 gap-8'>
-            {editorialOffices.map((office) => (
-              <div key={office.id} className='bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-8 border border-gray-100'>
-                <div className='text-center mb-6'>
-                  <div className='w-16 h-16 bg-gradient-to-br from-blue-500 to-green-500 rounded-full flex items-center justify-center mx-auto mb-4'>
-                    <img src={office.image} alt={office.name} className='w-12 h-12 rounded-full object-cover'/>
-                  </div>
-                  <h3 className='text-xl font-medium text-gray-800 mb-2'>{office.name}</h3>
-                  <p className='text-gray-600'>{office.designation}</p>
-                  <p className='text-sm text-gray-500'>{office.department}</p>
-                  <p className='text-sm text-gray-500'>{office.institution}</p>
-                  <p className='text-sm text-gray-500'>{office.address}</p>
-                </div>
-
-                <div className='space-y-4'>
-                  <div className='flex items-center gap-3 text-sm justify-center'>
-                    <Mail className='w-4 h-4 text-blue-600'/>
-                    <a href={`mailto:${office.email}`} className='text-blue-600 hover:text-blue-700'>{office.email}</a>
-                  </div>
-                  <div className='flex items-center gap-3 text-sm justify-center'>
-                    <ExternalLink className='w-4 h-4 text-gray-600'/>
-                    <a href={office.profileLink} target='_blank' rel='noopener noreferrer' className='text-gray-600 hover:text-gray-700'>LinkedIn Profile</a>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+   
 
       {/* Map Section */}
       <section className='py-16 bg-gradient-to-b from-gray-50 to-white'>

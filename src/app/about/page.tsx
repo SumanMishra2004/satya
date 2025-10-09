@@ -3,41 +3,7 @@ import { Users, Target, Lightbulb, Cpu, Zap, Globe, Award, Building } from 'luci
 import Image from 'next/image'
 
 const About = () => {
-  const teamMembers = [
-    {
-      id: 1,
-      name: "Prof.(Dr.) Sandip Mandal",
-      designation: "Head of the Department & Chief Architect",
-      department: "CSE(IoT, CS, BT)",
-      image: "/Sandip.jpeg",
-      description: "Leading expert in supercomputing architecture and AI acceleration"
-    },
-    {
-      id: 2,
-      name: "Prof.(Dr.) Susmita Biswas",
-      designation: "Assistant Head & SATYAMEBA Coordinator",
-      department: "CSE(IoT, CS, BT)",
-      image: "/Susmita.jpeg",
-      description: "Specialist in multi-GPU engine optimization and AI workload management"
-    },
-    {
-      id: 3,
-      name: "Prof. Avik Kumar Das",
-      designation: "Senior Research Engineer",
-      department: "CSE(IoT, CS, BT)",
-      image: "/Avik.jpeg",
-      description: "Expert in high-performance computing infrastructure"
-    },
-    {
-      id: 4,
-      name: "Prof. Apurba Nandi",
-      designation: "AI Systems Engineer",
-      department: "CSE(IoT, CS, BT)",
-      image: "/Apurba.jpeg",
-      description: "Specialist in AI acceleration and deep learning optimization"
-    }
-  ]
-
+ 
   const achievements = [
     {
       icon: <Cpu className="w-8 h-8" />,
@@ -135,34 +101,7 @@ const About = () => {
         </div>
       </section>
 
-      {/* Team Section */}
-      <section className='w-full py-16 bg-gradient-to-r from-[#003049]/5 to-[#669BBC]/5'>
-        <div className='max-w-6xl mx-auto px-4 md:px-8 lg:px-16'>
-          <h2 className='text-4xl font-bold text-center mb-4 text-[#780000]'>Our Leadership Team</h2>
-          <p className='text-center text-[#003049]/80 mb-12 max-w-2xl mx-auto'>
-            Meet the brilliant minds driving SATYAMEBA's innovation in supercomputing and AI acceleration
-          </p>
-          <div className='grid md:grid-cols-2 lg:grid-cols-4 gap-8'>
-            {teamMembers.map((member) => (
-              <div key={member.id} className='bg-white rounded-xl p-6 shadow-lg border border-[#669BBC]/20 hover:shadow-xl transition-all hover:scale-105'>
-                <div className='w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden bg-gradient-to-br from-[#669BBC]/20 to-[#C1121F]/20'>
-                  <Image
-                    src={member.image}
-                    alt={member.name}
-                    width={96}
-                    height={96}
-                    className='w-full h-full object-cover'
-                  />
-                </div>
-                <h3 className='text-lg font-semibold text-center mb-2 text-[#780000]'>{member.name}</h3>
-                <p className='text-sm font-medium text-center mb-2 text-[#C1121F]'>{member.designation}</p>
-                <p className='text-xs text-center mb-3 text-[#003049]/70'>{member.department}</p>
-                <p className='text-sm text-center text-[#003049]/80'>{member.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+     
 
       {/* Contact CTA Section */}
       <section className='w-full py-16 bg-gradient-to-r from-[#780000] to-[#C1121F]'>
