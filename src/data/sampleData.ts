@@ -255,30 +255,41 @@ export const satyamebaServices = {
               icon: "zap"
             }
           ]
-        },
-       
+        }
       ]
     },
     {
-      id: 2,
+      id: "base-nodes",
+      name: "Base Nodes",
+      description: "High-performance base specification nodes with Xeon W9-3495X processors",
+      icon: "server"
+    },
+    {
+      id: "master-nodes",
+      name: "Master Nodes",
+      description: "Centralized computing nodes for system management and control",
+      icon: "monitor-play"
+    },
+    {
+      id: "cpu-compute-nodes",
+      name: "CPU Only Compute Nodes",
+      description: "Dedicated CPU computing nodes for parallel processing tasks",
+      icon: "cpu"
+    },
+    {
+      id: "gpu-compute-nodes",
+      name: "GPU Only Compute Nodes",
+      description: "High-performance GPU nodes for AI and machine learning workloads",
+      icon: "zap"
+    },
+    {
+      id: 5,
       name: "Network Infrastructure",
       description: "Fortinet FortiGate 100F, TP-Link Omada VPN Router, Cisco Catalyst Switch",
       icon: "network"
     },
     {
-      id: 3,
-      name: "Master Nodes",
-      description: "Server 1 & Server 2 for centralized computing",
-      icon: "server"
-    },
-    {
-      id: 4,
-      name: "Edge Nodes",
-      description: "Distributed edge computing infrastructure",
-      icon: "cpu"
-    },
-    {
-      id: 5,
+      id: 6,
       name: "UPS Power Supply",
       description: "Uninterruptible power supply for continuous operation",
       icon: "power"

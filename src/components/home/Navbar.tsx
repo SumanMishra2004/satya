@@ -31,6 +31,7 @@ import {
   TerminalIcon,
   HardDrive,
   Shield,
+  MonitorPlay,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
@@ -40,6 +41,7 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
+import { ScrollArea } from "@/components/ui/scroll-area";
 
 import {
   NavigationMenu,
@@ -150,21 +152,22 @@ const Navbar: React.FC = () => {
                           {satyamebaServices.fullForm}
                         </p>
                       </div>
-                      <ul className="space-y-2 overflow-visible">
-                        {satyamebaServices.services.map((service) => (
-                          <li
-                            key={service.id}
-                            className="relative"
-                            onMouseEnter={() => {
-                              if (service.subServices) {
-                                setHoveredService(service.id);
-                              }
-                            }}
-                            onMouseLeave={() => {
-                              setHoveredService(null);
-                              setHoveredSubService(null);
-                            }}
-                          >
+                      <ScrollArea className="h-[300px] overflow-visible">
+                        <ul className="overflow-visible">
+                          {satyamebaServices.services.map((service) => (
+                            <li
+                              key={service.id}
+                              className="relative"
+                              onMouseEnter={() => {
+                                if (service.subServices) {
+                                  setHoveredService(service.id);
+                                }
+                              }}
+                              onMouseLeave={() => {
+                                setHoveredService(null);
+                                setHoveredSubService(null);
+                              }}
+                            >
                             {service.subServices ? (
                               // Service with nested dropdown
                               <div className="relative">
@@ -189,8 +192,20 @@ const Navbar: React.FC = () => {
                                           strokeWidth={iconStrokeWidth}
                                         />
                                       )}
+                                      {service.icon === "monitor-play" && (
+                                        <MonitorPlay
+                                          className="h-5 w-5"
+                                          strokeWidth={iconStrokeWidth}
+                                        />
+                                      )}
                                       {service.icon === "cpu" && (
                                         <Cpu
+                                          className="h-5 w-5"
+                                          strokeWidth={iconStrokeWidth}
+                                        />
+                                      )}
+                                      {service.icon === "zap" && (
+                                        <Zap
                                           className="h-5 w-5"
                                           strokeWidth={iconStrokeWidth}
                                         />
@@ -550,8 +565,20 @@ const Navbar: React.FC = () => {
                                         strokeWidth={iconStrokeWidth}
                                       />
                                     )}
+                                    {service.icon === "monitor-play" && (
+                                      <MonitorPlay
+                                        className="h-5 w-5"
+                                        strokeWidth={iconStrokeWidth}
+                                      />
+                                    )}
                                     {service.icon === "cpu" && (
                                       <Cpu
+                                        className="h-5 w-5"
+                                        strokeWidth={iconStrokeWidth}
+                                      />
+                                    )}
+                                    {service.icon === "zap" && (
+                                      <Zap
                                         className="h-5 w-5"
                                         strokeWidth={iconStrokeWidth}
                                       />
@@ -582,7 +609,8 @@ const Navbar: React.FC = () => {
                             )}
                           </li>
                         ))}
-                      </ul>
+                        </ul>
+                      </ScrollArea>
                     </div>
                   </NavigationMenuContent>
                 </NavigationMenuItem>
@@ -603,7 +631,8 @@ const Navbar: React.FC = () => {
                           {configurationServices.fullForm}
                         </p>
                       </div>
-                      <ul className="space-y-2 overflow-visible">
+                      <ScrollArea className="h-[200px] overflow-visible">
+                        <ul className="space-y-2 overflow-visible">
                         {configurationServices.services.map((service) => (
                           <li key={service.id}>
                             <Link
@@ -649,7 +678,8 @@ const Navbar: React.FC = () => {
                             </Link>
                           </li>
                         ))}
-                      </ul>
+                        </ul>
+                      </ScrollArea>
                     </div>
                   </NavigationMenuContent>
                 </NavigationMenuItem>

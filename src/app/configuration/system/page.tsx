@@ -1,10 +1,10 @@
 "use client";
 
-import React, { useState } from 'react';
+import React from 'react';
+import Link from 'next/link';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
 import { Cpu, HardDrive, Zap, Network, Server, MonitorPlay, Database, Activity } from 'lucide-react';
 
 export default function SatyamebaSystem() {
@@ -60,32 +60,14 @@ export default function SatyamebaSystem() {
           </h1>
           <p className="text-gray-700 text-xl">High-Performance Computing System Configuration</p>
         </div>
-        {/* View Configuration Dialog */}
-        <div className="text-center mb-8 flex justify-center items-center">
-          <Dialog>
-            <DialogTrigger asChild>
-              <Button className="bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-700 hover:to-rose-700 text-white font-semibold py-3 px-8 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl flex items-center gap-2 w-full text-center md:w-auto">
-                <MonitorPlay className="w-5 h-5" />
-                View System Configuration PDF
-              </Button>
-            </DialogTrigger>
-            <DialogContent className="max-w-6xl w-[95vw] h-[90vh] p-0">
-              <DialogHeader className="p-6 pb-0">
-                <DialogTitle className="text-2xl font-bold bg-gradient-to-r from-red-600 to-rose-600 bg-clip-text text-transparent">
-                  SATYAMEBA System Configuration
-                </DialogTitle>
-              </DialogHeader>
-              <div className="flex-1 p-6 pt-2">
-                <div className="w-full h-full bg-gray-100 rounded-lg overflow-hidden">
-                  <iframe
-                    src="/Satyameba System Config.pdf"
-                    className="w-full h-full border-0"
-                    title="SATYAMEBA System Configuration PDF"
-                  />
-                </div>
-              </div>
-            </DialogContent>
-          </Dialog>
+        {/* View Configuration Button */}
+        <div className="text-center mb-8">
+          <Link href="/configuration/system/pdf">
+            <Button className="bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-700 hover:to-rose-700 text-white font-semibold py-3 px-8 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl flex items-center gap-2">
+              <MonitorPlay className="w-5 h-5" />
+              View System Configuration PDF
+            </Button>
+          </Link>
         </div>
         {/* Key Stats */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
