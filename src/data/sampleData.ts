@@ -244,24 +244,19 @@ export const satyamebaServices = {
           subServices: [
             {
               id: "paas-option-1",
-              name: "PaaS Option 1",
+              name: "FAMEBOT",
               description: "First PaaS service option",
               icon: "zap"
             },
             {
               id: "paas-option-2",
-              name: "PaaS Option 2",
+              name: "QEDA",
               description: "Second PaaS service option",
               icon: "zap"
             }
           ]
         },
-        {
-          id: "saas",
-          name: "Further More",
-          description: "Coming Soon",
-          icon: "circle-ellipsis"
-        }
+       
       ]
     },
     {
@@ -296,28 +291,16 @@ export const configurationServices = {
   fullForm: "System Configuration and Management Services",
   services: [
     {
-      id: 1,
-      name: "Hardware Configuration",
-      description: "Server and hardware setup management",
-      icon: "cpu"
-    },
-    {
-      id: 2,
-      name: "Network Configuration",
-      description: "Network settings and connectivity management",
+      id: "architecture",
+      name: "Architecture",
+      description: "System architecture design and planning",
       icon: "network"
     },
     {
-      id: 3,
-      name: "Software Configuration",
-      description: "Application and system software configuration",
-      icon: "server"
-    },
-    {
-      id: 4,
-      name: "More",
-      description: "Additional configuration options and services",
-      icon: "circle-ellipsis"
+      id: "system",
+      name: "System",
+      description: "System configuration and setup management",
+      icon: "cpu"
     }
   ]
 };

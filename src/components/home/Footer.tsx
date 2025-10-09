@@ -91,7 +91,7 @@ const Footer = () => {
               </div>
               
               {/* Configuration Link */}
-              <div className='bg-white/5 hover:bg-white/10 backdrop-blur-sm border border-white/10 hover:border-blue-400/30 rounded-xl px-6 py-4 text-left transition-all duration-300 group hover:shadow-lg'>
+              <Link href={"/configuration/architecture"} className='bg-white/5 hover:bg-white/10 backdrop-blur-sm border border-white/10 hover:border-blue-400/30 rounded-xl px-6 py-4 text-left transition-all duration-300 group hover:shadow-lg'>
                 <div className='flex items-center justify-between'>
                   <div>
                     <h5 className='font-medium text-slate-100 group-hover:text-blue-300'>Configuration</h5>
@@ -103,7 +103,7 @@ const Footer = () => {
                     </svg>
                   </div>
                 </div>
-              </div>
+              </Link>
               
               {/* About Us Link */}
               <Link href={"/about"} className='bg-white/5 hover:bg-white/10 backdrop-blur-sm border border-white/10 hover:border-blue-400/30 rounded-xl px-6 py-4 text-left transition-all duration-300 group hover:shadow-lg'>
