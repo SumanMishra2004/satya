@@ -13,7 +13,7 @@ export const journalInfo = {
 
 export const heroImages = [
   "/images/hero-1.jpg",
-  "/images/hero-2.jpg", 
+  "/images/hero-2.jpg",
   "/images/hero-3.jpg",
   "/images/hero-4.jpg"
 ];
@@ -33,7 +33,7 @@ export const editorialBoard = [
     name: "Prof. James Chen",
     designation: "Associate Editor",
     institution: "Stanford University",
-    email: "j.chen@stanford.edu", 
+    email: "j.chen@stanford.edu",
     address: "450 Serra Mall, Stanford, CA 94305, USA",
     profileLink: "https://profiles.stanford.edu/james-chen"
   },
@@ -43,7 +43,7 @@ export const editorialBoard = [
     designation: "Managing Editor",
     institution: "Harvard University",
     email: "s.williams@harvard.edu",
-    address: "Cambridge, MA 02138, USA", 
+    address: "Cambridge, MA 02138, USA",
     profileLink: "https://scholar.harvard.edu/sarahwilliams"
   },
   {
@@ -57,7 +57,7 @@ export const editorialBoard = [
   },
   {
     id: 5,
-    name: "Dr. Priya Sharma", 
+    name: "Dr. Priya Sharma",
     designation: "Editorial Board Member",
     institution: "Indian Institute of Technology Delhi",
     email: "p.sharma@iitd.ac.in",
@@ -127,7 +127,7 @@ export const pastIssues = [
   {
     id: 5,
     year: 2023,
-    issue: "Volume 5, Issue 1", 
+    issue: "Volume 5, Issue 1",
     title: "IoT and Smart Systems",
     coverImage: "/images/issue-2023-1.jpg",
     articles: [
@@ -192,4 +192,75 @@ export const contactInfo = {
   phone: "+1 (555) 123-4567",
   contactPerson: "Dr. Emily Richardson",
   office: "Editorial Office, Room 205"
+};
+
+export const satyamebaServices = {
+  title: "SATYAMEBA",
+  fullForm: "Supercomputing Architecture for Transformative Yield in AI and Multi-GPU Engine Based Acceleration",
+  services: [
+    {
+      id: 1,
+      name: "HPC User Access",
+      description: "High-Performance Computing access for research and development",
+      icon: "users",
+      subServices: [
+        {
+          id: "iaas",
+          name: "IaaS",
+          description: "Infrastructure as a Service",
+          icon: "server"
+        },
+        {
+          id: "paas",
+          name: "PaaS",
+          description: "Platform as a Service",
+          icon: "cpu",
+          subServices: [
+            {
+              id: "paas-option-1",
+              name: "PaaS Option 1",
+              description: "First PaaS service option",
+              icon: "zap"
+            },
+            {
+              id: "paas-option-2",
+              name: "PaaS Option 2",
+              description: "Second PaaS service option",
+              icon: "zap"
+            }
+          ]
+        },
+        {
+          id: "saas",
+          name: "Further More",
+          description: "Coming Soon",
+          icon: "circle-ellipsis"
+        }
+      ]
+    },
+    {
+      id: 2,
+      name: "Network Infrastructure",
+      description: "Fortinet FortiGate 100F, TP-Link Omada VPN Router, Cisco Catalyst Switch",
+      icon: "network"
+    },
+    {
+      id: 3,
+      name: "Master Nodes",
+      description: "Server 1 & Server 2 for centralized computing",
+      icon: "server"
+    },
+    {
+      id: 4,
+      name: "Edge Nodes",
+      description: "Distributed edge computing infrastructure",
+      icon: "cpu"
+    },
+    {
+      id: 5,
+      name: "UPS Power Supply",
+      description: "Uninterruptible power supply for continuous operation",
+      icon: "power"
+    }
+  ]
 };
