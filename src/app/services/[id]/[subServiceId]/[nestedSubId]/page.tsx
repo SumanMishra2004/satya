@@ -286,7 +286,9 @@ const NestedSubServicePage = async ({ params }: NestedSubServicePageProps) => {
         <div className='max-w-6xl mx-auto'>
           <div className='text-center mb-12'>
             <div className='flex justify-center mb-6 text-[#C1121F]'>
-              {getIcon(nestedSubService.icon)}
+              <div className="w-16 h-16 flex items-center justify-center">
+                {nestedSubService.icon}
+              </div>
             </div>
             <h1 className='text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-[#780000] to-[#C1121F] bg-clip-text text-transparent'>
               {content.title}

@@ -180,7 +180,9 @@ const ServicePage = async ({ params }: ServicePageProps) => {
         <div className='max-w-6xl mx-auto'>
           <div className='text-center mb-12'>
             <div className='flex justify-center mb-6 text-[#C1121F]'>
-              {getIcon(service.icon)}
+              <div className="w-16 h-16 flex items-center justify-center">
+                {service.icon}
+              </div>
             </div>
             <h1 className='text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-[#780000] to-[#C1121F] bg-clip-text text-transparent'>
               {content.title}
@@ -206,7 +208,9 @@ const ServicePage = async ({ params }: ServicePageProps) => {
               {service.subServices.map((subService) => (
                 <div key={subService.id} className='bg-white rounded-xl p-6 shadow-lg border border-[#669BBC]/20 hover:shadow-xl transition-all hover:scale-105'>
                   <div className='flex justify-center mb-4 text-[#C1121F]'>
-                    {getIcon(subService.icon, "w-6 h-6")}
+                    <div className="w-6 h-6 flex items-center justify-center">
+                      {subService.icon}
+                    </div>
                   </div>
                   <h3 className='text-xl font-semibold text-center mb-3 text-[#780000]'>{subService.name}</h3>
                   <p className='text-center text-[#003049]/80 mb-4'>{subService.description}</p>

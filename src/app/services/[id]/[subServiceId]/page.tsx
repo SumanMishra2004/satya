@@ -160,7 +160,9 @@ const SubServicePage = async ({ params }: SubServicePageProps) => {
         <div className='max-w-6xl mx-auto'>
           <div className='text-center mb-12'>
             <div className='flex justify-center mb-6 text-[#C1121F]'>
-              {getIcon(subService.icon)}
+              <div className="w-16 h-16 flex items-center justify-center">
+                {subService.icon}
+              </div>
             </div>
             <h1 className='text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-[#780000] to-[#C1121F] bg-clip-text text-transparent'>
               {content.title}
@@ -190,7 +192,9 @@ const SubServicePage = async ({ params }: SubServicePageProps) => {
                   className='bg-white rounded-xl p-6 shadow-lg border border-[#669BBC]/20 hover:shadow-xl transition-all hover:scale-105 group'
                 >
                   <div className='flex justify-center mb-4 text-[#C1121F] group-hover:text-[#780000] transition-colors'>
-                    {getIcon(nestedService.icon, "w-6 h-6")}
+                    <div className="w-6 h-6 flex items-center justify-center">
+                      {nestedService.icon}
+                    </div>
                   </div>
                   <h3 className='text-lg font-semibold text-center mb-3 text-[#780000] group-hover:text-[#C1121F] transition-colors'>
                     {nestedService.name}
