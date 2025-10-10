@@ -144,7 +144,7 @@ const Navbar: React.FC = () => {
                 
 
                     <span className="hidden md:flex flex-col leading-tight text-left">
-                      <span className="tracking-wide font-semibold">
+                      <span className="tracking-wide font-medium">
                         SATYAMEBA Services
                       </span>
                      
