@@ -31,7 +31,7 @@ function HomePage() {
           <div className='w-full text-center max-w-4xl mx-auto'>            
             {/* SATYAMEBA Full Form and Description */}
             <div className='text-[#FDF0D5]'>
-              <h1 className='text-2xl md:text-3xl lg:text-4xl font-extralight tracking-wide leading-tight mb-8'>
+              <h1 className='text-2xl md:text-3xl lg:text-5xl font-semibold tracking-wide leading-snug mb-8'>
                 <span className='text-[#669BBC] font-medium'>S</span>upercomputing{' '}
                 <span className='text-[#669BBC] font-medium'>A</span>rchitecture for{' '}
                 <span className='text-[#669BBC] font-medium'>T</span>ransformative{' '}

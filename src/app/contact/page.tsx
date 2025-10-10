@@ -16,7 +16,7 @@ const Contact = () => {
   const contactInfo = {
     address: `Supercomputing Lab
     IEDC (drone & UAV)
-CSE(IoT, CS, BT)
+
 University of Engineering & Management, Kolkata (UEMK)
 New Town, Kolkata - 700160
 West Bengal, India`,

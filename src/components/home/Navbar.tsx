@@ -129,11 +129,8 @@ const Navbar: React.FC = () => {
         <div className=" w-full px-4 py-1 flex items-center justify-between">
           {/* Left: Home */}
           <div className="flex-shrink-0">
-            <Link href="/" className="flex items-center gap-2">
-              <Home
-                className="h-6 w-6 text-[#FDF0D5]"
-                strokeWidth={iconStrokeWidth}
-              />
+            <Link href="/" className="text-white font-semibold text-lg flex items-center gap-1">
+             Home
             </Link>
           </div>
 
@@ -144,16 +141,13 @@ const Navbar: React.FC = () => {
                 {/* Satyameba Dropdown */}
                 <NavigationMenuItem>
                   <NavigationMenuTrigger className="flex items-center gap-2 bg-transparent  text-white text-lg">
-                    <Server
-                      className="h-6 w-6 flex-shrink-0"
-                      strokeWidth={iconStrokeWidth}
-                    />
+                
 
                     <span className="hidden md:flex flex-col leading-tight text-left">
                       <span className="tracking-wide font-semibold">
-                        SATYAMEBA
+                        SATYAMEBA Services
                       </span>
-                      <span className="text-sm  tracking-normal">Services</span>
+                     
                     </span>
                   </NavigationMenuTrigger>
 
@@ -187,9 +181,7 @@ const Navbar: React.FC = () => {
                               <div className="relative">
                                 <div className="block p-3 rounded-lg hover:bg-blue-50 transition-colors cursor-pointer">
                                   <div className="flex items-start gap-3">
-                                  <div className="text-blue-600 mt-1">
-                                      {service.icon}
-                                    </div>
+                                  
                                     <div className="flex-1">
                                       <h5
                                         className={`font-medium transition-colors mb-1 flex items-center gap-2 ${
@@ -236,7 +228,7 @@ const Navbar: React.FC = () => {
                                                 <div className="relative">
                                                   <div className="block p-2 rounded-lg hover:bg-blue-50 transition-colors cursor-pointer">
                                                     <div className="flex items-start gap-2">
-                                                      {subService.icon}
+                                                     
                                                       <div className="flex-1">
                                                         <h6
                                                           className={`font-medium transition-colors text-sm flex items-center gap-2 ${
@@ -282,53 +274,7 @@ const Navbar: React.FC = () => {
                                                                   className="block p-2 rounded-lg hover:bg-blue-50 transition-colors"
                                                                 >
                                                                   <div className="flex items-start gap-2">
-                                                                    <div className="text-blue-600 mt-0.5">
-                                                                      {nestedSub.icon ===
-                                                                        "zap" && (
-                                                                        <Zap
-                                                                          className="h-4 w-4"
-                                                                          strokeWidth={
-                                                                            iconStrokeWidth
-                                                                          }
-                                                                        />
-                                                                      )}
-                                                                      {nestedSub.icon ===
-                                                                        "server" && (
-                                                                        <Server
-                                                                          className="h-4 w-4"
-                                                                          strokeWidth={
-                                                                            iconStrokeWidth
-                                                                          }
-                                                                        />
-                                                                      )}
-                                                                      {nestedSub.icon ===
-                                                                        "hard-drive" && (
-                                                                        <HardDrive
-                                                                          className="h-4 w-4"
-                                                                          strokeWidth={
-                                                                            iconStrokeWidth
-                                                                          }
-                                                                        />
-                                                                      )}
-                                                                      {nestedSub.icon ===
-                                                                        "network" && (
-                                                                        <Network
-                                                                          className="h-4 w-4"
-                                                                          strokeWidth={
-                                                                            iconStrokeWidth
-                                                                          }
-                                                                        />
-                                                                      )}
-                                                                      {nestedSub.icon ===
-                                                                        "shield" && (
-                                                                        <Shield
-                                                                          className="h-4 w-4"
-                                                                          strokeWidth={
-                                                                            iconStrokeWidth
-                                                                          }
-                                                                        />
-                                                                      )}
-                                                                    </div>
+                                                                    
                                                                     <div className="flex-1">
                                                                       <h6 className="font-medium text-gray-800 hover:text-blue-600 transition-colors text-sm">
                                                                         {
@@ -358,71 +304,7 @@ const Navbar: React.FC = () => {
                                                   className="block p-2 rounded-lg hover:bg-blue-50 transition-colors"
                                                 >
                                                   <div className="flex items-start gap-2">
-                                                    <div className="text-blue-600 mt-0.5">
-                                                      {subService.icon ===
-                                                        "server" && (
-                                                        <Server
-                                                          className="h-4 w-4"
-                                                          strokeWidth={
-                                                            iconStrokeWidth
-                                                          }
-                                                        />
-                                                      )}
-                                                      {subService.icon ===
-                                                        "cpu" && (
-                                                        <Cpu
-                                                          className="h-4 w-4"
-                                                          strokeWidth={
-                                                            iconStrokeWidth
-                                                          }
-                                                        />
-                                                      )}
-                                                      {subService.icon ===
-                                                        "zap" && (
-                                                        <Zap
-                                                          className="h-4 w-4"
-                                                          strokeWidth={
-                                                            iconStrokeWidth
-                                                          }
-                                                        />
-                                                      )}
-                                                      {subService.icon ===
-                                                        "circle-ellipsis" && (
-                                                        <MoreHorizontal
-                                                          className="h-4 w-4"
-                                                          strokeWidth={
-                                                            iconStrokeWidth
-                                                          }
-                                                        />
-                                                      )}
-                                                      {subService.icon ===
-                                                        "network" && (
-                                                        <Network
-                                                          className="h-4 w-4"
-                                                          strokeWidth={
-                                                            iconStrokeWidth
-                                                          }
-                                                        />
-                                                      )}
-                                                      {subService.icon ===
-                                                        "hard-drive" && (
-                                                        <HardDrive
-                                                          className="h-4 w-4"
-                                                          strokeWidth={
-                                                            iconStrokeWidth
-                                                          }
-                                                        />
-                                                      )}
-                                                      {subService.icon ===
-                                                        "shield" && (
-                                                        <Shield
-                                                          className="h-4 w-4"
-                                                          strokeWidth={
-                                                            iconStrokeWidth
-                                                          }
-                                                        />
-                                                      )}
-                                                    </div>
+                                                  
                                                     <div className="flex-1">
                                                       <h6 className="font-medium text-gray-800 hover:text-blue-600 transition-colors text-sm">
                                                         {subService.name}
@@ -449,7 +331,7 @@ const Navbar: React.FC = () => {
                                 className="block p-3 rounded-lg hover:bg-blue-50 transition-colors group"
                               >
                                 <div className="flex items-start gap-3">
-                                  {service.icon}
+                                  
                                   <div className="flex-1">
                                     <h5 className="font-medium text-gray-800 group-hover:text-blue-600 transition-colors mb-1">
                                       {service.name}
@@ -471,7 +353,7 @@ const Navbar: React.FC = () => {
                 {/* Configuration Dropdown */}
                 <NavigationMenuItem>
                   <NavigationMenuTrigger className="flex items-center gap-1 bg-transparent text-white text-lg">
-                    <Gpu className="h-5 w-5" strokeWidth={iconStrokeWidth} />
+                    
                     <span className="hidden md:inline">Configuration</span>
                   </NavigationMenuTrigger>
                   <NavigationMenuContent className="overflow-visible bg-[#ab1821]/10">
@@ -492,32 +374,7 @@ const Navbar: React.FC = () => {
                               className="block p-2 rounded-lg hover:bg-blue-50 transition-colors"
                             >
                               <div className="flex items-start gap-2">
-                                <div className="text-blue-600 mt-0.5">
-                                  {service.icon === "cpu" && (
-                                    <Cpu
-                                      className="h-4 w-4"
-                                      strokeWidth={iconStrokeWidth}
-                                    />
-                                  )}
-                                  {service.icon === "network" && (
-                                    <Network
-                                      className="h-4 w-4"
-                                      strokeWidth={iconStrokeWidth}
-                                    />
-                                  )}
-                                  {service.icon === "server" && (
-                                    <Server
-                                      className="h-4 w-4"
-                                      strokeWidth={iconStrokeWidth}
-                                    />
-                                  )}
-                                  {service.icon === "circle-ellipsis" && (
-                                    <MoreHorizontal
-                                      className="h-4 w-4"
-                                      strokeWidth={iconStrokeWidth}
-                                    />
-                                  )}
-                                </div>
+                               
                                 <div className="flex-1">
                                   <h5 className="font-medium text-gray-800 hover:text-blue-600 transition-colors mb-1">
                                     {service.name}
@@ -544,7 +401,7 @@ const Navbar: React.FC = () => {
                       href="/about"
                       className="flex items-center flex-row gap-1"
                     >
-                      <User className="size-5 text-white" strokeWidth={iconStrokeWidth} />
+                     
                       <span className="hidden md:inline">About Us</span>
                     </Link>
                   </NavigationMenuLink>
@@ -559,10 +416,7 @@ const Navbar: React.FC = () => {
                       href="/contact"
                       className="flex items-center flex-row gap-1"
                     >
-                      <PhoneCall
-                        className="size-5 text-white"
-                        strokeWidth={iconStrokeWidth}
-                      />
+                     
                       <span className="hidden md:inline">Contact Us</span>
                     </Link>
                   </NavigationMenuLink>

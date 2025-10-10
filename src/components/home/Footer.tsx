@@ -12,17 +12,11 @@ const Footer = () => {
           <div className='flex flex-col items-center md:items-start space-y-6'>
             
             {/* SATYAMEBA Logo - Rounded Square */}
-            <div className='w-20 h-20 md:w-24 md:h-24 rounded-2xl overflow-hidden bg-gradient-to-br from-[#C1121F] to-[#780000] p-1 shadow-xl'>
-              <div className='w-full h-full rounded-xl overflow-hidden bg-white'>
-                <Image 
-                  src="/iedc-logo.jpg" 
-                  width={96} 
-                  height={96} 
-                  alt='SATYAMEBA Logo'
-                  className='w-full h-full object-cover'
-                />
-              </div>
-            </div>
+           <p className='text-5xl text-gray-300'>
+
+               SATYAMEBA
+           </p>
+           
             
             {/* SATYAMEBA Text - Responsive */}
             <div className='text-center md:text-left'>
@@ -59,7 +53,7 @@ const Footer = () => {
             {/* Contact Info */}
             <div className='text-center md:text-left text-slate-400 text-sm'>
               <p className='font-light'>University of Engineering & Management</p>
-              <p className='font-light'>Department of CSE(IoT, CS, BT)</p>
+           
             </div>
             
           </div>
@@ -120,20 +114,7 @@ const Footer = () => {
                 </div>
               </Link>
               
-              {/* Contact Us Link */}
-              <Link href={"/contact"} className='bg-white/5 hover:bg-white/10 backdrop-blur-sm border border-white/10 hover:border-blue-400/30 rounded-xl px-6 py-4 text-left transition-all duration-300 group hover:shadow-lg'>
-                <div className='flex items-center justify-between'>
-                  <div>
-                    <h5 className='font-medium text-slate-100 group-hover:text-blue-300'>Contact Us</h5>
-                    <p className='text-slate-400 text-sm font-light'>Get in touch with our team</p>
-                  </div>
-                  <div className='text-slate-500 group-hover:text-blue-400 transition-colors'>
-                    <svg className='w-5 h-5' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
-                      <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={1.5} d='M9 5l7 7-7 7' />
-                    </svg>
-                  </div>
-                </div>
-              </Link>
+             
               
             </div>
           </div>
