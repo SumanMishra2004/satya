@@ -54,10 +54,10 @@ import {
 import Image from "next/image";
 import Link from "next/link";
 import { satyamebaServices, configurationServices } from "@/data/sampleData";
-import { Gravitas_One } from "next/font/google";
+import { Gravitas_One, Noto_Serif_Armenian } from "next/font/google";
 
 const UemLogo = () => (
-  <div className="h-12 w-12 md:h-20 md:w-28 overflow-hidden flex items-center justify-center font-bold text-[#FDF0D5] rounded-lg bg-[#FDF0D5]">
+  <div className="h-12 w-12 md:h-24 md:w-28 overflow-hidden flex items-center justify-center font-bold text-[#FDF0D5] rounded-lg bg-[#FDF0D5]">
     <Image
       src="/uem.png"
       alt="UEM Logo"
@@ -68,7 +68,7 @@ const UemLogo = () => (
   </div>
 );
 const IemLogo = () => (
-  <div className="h-12 w-12 md:h-20 md:w-28 overflow-hidden flex items-center justify-center font-bold text-[#FDF0D5] rounded-lg bg-[#FDF0D5]">
+  <div className="h-12 w-12 md:h-24 md:w-28 overflow-hidden flex items-center justify-center font-bold text-[#FDF0D5] rounded-lg bg-[#FDF0D5]">
     <Image
       src="/iem-logo.png"
       alt="IEM Logo"
@@ -78,10 +78,10 @@ const IemLogo = () => (
     />
   </div>
 );
-const gravitasOne = Gravitas_One({
+const notosarif = Noto_Serif_Armenian({
   subsets: ["latin"],
-  weight: ["400"],
-  variable: "--font-gravitas-one",
+  weight: ["400","100","300","500","700","900"],
+  variable: "--font-noto-sarif",
 });
 const iconStrokeWidth = 0.123 * 16;
 
@@ -109,7 +109,7 @@ const Navbar: React.FC = () => {
           <div className="flex  justify-center items-center gap-6">
             <div className="flex flex-col  items-center justify-center gap-2 ">
               <span
-                className={`${gravitasOne.className} font-bold text-4xl text-[#64e8ff] leading-10 tracking-[2]`}
+                className={`${notosarif.className} font-[700] text-4xl tracking-[2] text-white`}
               >
                 SATYAMEBA
               </span>
