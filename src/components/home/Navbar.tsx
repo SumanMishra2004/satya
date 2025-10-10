@@ -31,7 +31,6 @@ import {
   TerminalIcon,
   HardDrive,
   Shield,
-  MonitorPlay,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
@@ -41,7 +40,6 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
-import { ScrollArea } from "@/components/ui/scroll-area";
 
 import {
   NavigationMenu,
@@ -56,30 +54,35 @@ import {
 import Image from "next/image";
 import Link from "next/link";
 import { satyamebaServices, configurationServices } from "@/data/sampleData";
+import { Gravitas_One } from "next/font/google";
 
 const UemLogo = () => (
-  <div className="h-12 w-12 md:h-24 md:w-24 flex items-center justify-center font-bold text-[#FDF0D5] rounded-lg bg-[#FDF0D5]">
+  <div className="h-12 w-12 md:h-20 md:w-28 overflow-hidden flex items-center justify-center font-bold text-[#FDF0D5] rounded-lg bg-[#FDF0D5]">
     <Image
       src="/uem.png"
       alt="UEM Logo"
-      width={48}
-      height={48}
+      width={150}
+      height={150}
       className="w-full h-full object-contain"
     />
   </div>
 );
 const IemLogo = () => (
-  <div className="h-12 w-12 md:h-24 md:w-24 flex items-center justify-center font-bold text-[#FDF0D5] rounded-lg bg-[#FDF0D5]">
+  <div className="h-12 w-12 md:h-20 md:w-28 overflow-hidden flex items-center justify-center font-bold text-[#FDF0D5] rounded-lg bg-[#FDF0D5]">
     <Image
       src="/iem-logo.png"
       alt="IEM Logo"
-      width={48}
-      height={48}
+      width={150}
+      height={150}
       className="w-full h-full object-contain"
     />
   </div>
 );
-
+const gravitasOne = Gravitas_One({
+  subsets: ["latin"],
+  weight: ["400"],
+  variable: "--font-gravitas-one",
+});
 const iconStrokeWidth = 0.123 * 16;
 
 const Navbar: React.FC = () => {
@@ -104,16 +107,16 @@ const Navbar: React.FC = () => {
             <UemLogo />
           </div>
           <div className="flex  justify-center items-center gap-6">
-           
-
             <div className="flex flex-col  items-center justify-center gap-2 ">
-              <span className="font-bold text-2xl text-[#FDF0D5]">
-                Supercomputing Architecture for Transformative Yield in AI
+              <span
+                className={`${gravitasOne.className} font-bold text-4xl text-[#64e8ff] leading-10 tracking-[2]`}
+              >
+                SATYAMEBA
               </span>
-              <span className="font-bold text-2xl text-[#FDF0D5]">
-               and Multi-GPU Engine Based Acceleration
+              <span className="font-bold text-xl text-[#FDF0D5]">
+                Supercomputing Architecture for Transformative Yield in AI and
+                Multi-GPU Engine Based Acceleration
               </span>
-
             </div>
           </div>
           {/* Right: IEM Logo */}
@@ -127,8 +130,10 @@ const Navbar: React.FC = () => {
           {/* Left: Home */}
           <div className="flex-shrink-0">
             <Link href="/" className="flex items-center gap-2">
-              <Home className="h-6 w-6 text-[#FDF0D5]" strokeWidth={iconStrokeWidth} />
-             
+              <Home
+                className="h-6 w-6 text-[#FDF0D5]"
+                strokeWidth={iconStrokeWidth}
+              />
             </Link>
           </div>
 
@@ -138,10 +143,20 @@ const Navbar: React.FC = () => {
               <NavigationMenuList className="flex space-x-2">
                 {/* Satyameba Dropdown */}
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger className="flex items-center gap-1">
-                    <Server className="h-5 w-5" strokeWidth={iconStrokeWidth} />
-                    <span className="hidden md:inline">Sevices</span>
+                  <NavigationMenuTrigger className="flex items-center gap-2 bg-transparent  text-white text-lg">
+                    <Server
+                      className="h-6 w-6 flex-shrink-0"
+                      strokeWidth={iconStrokeWidth}
+                    />
+
+                    <span className="hidden md:flex flex-col leading-tight text-left">
+                      <span className="tracking-wide font-semibold">
+                        SATYAMEBA
+                      </span>
+                      <span className="text-sm  tracking-normal">Services</span>
+                    </span>
                   </NavigationMenuTrigger>
+
                   <NavigationMenuContent className="overflow-visible bg-[#ab1821]/10">
                     <div className="w-full p-4 min-w-[400px] max-w-[400px] overflow-visible">
                       <div className="mb-4">
@@ -152,76 +167,28 @@ const Navbar: React.FC = () => {
                           {satyamebaServices.fullForm}
                         </p>
                       </div>
-                      <ScrollArea className="h-[300px] overflow-visible">
-                        <ul className="overflow-visible">
-                          {satyamebaServices.services.map((service) => (
-                            <li
-                              key={service.id}
-                              className="relative"
-                              onMouseEnter={() => {
-                                if (service.subServices) {
-                                  setHoveredService(service.id);
-                                }
-                              }}
-                              onMouseLeave={() => {
-                                setHoveredService(null);
-                                setHoveredSubService(null);
-                              }}
-                            >
+                      <ul className="space-y-2 overflow-visible">
+                        {satyamebaServices.services.map((service) => (
+                          <li
+                            key={service.id}
+                            className="relative"
+                            onMouseEnter={() => {
+                              if (service.subServices) {
+                                setHoveredService(service.id);
+                              }
+                            }}
+                            onMouseLeave={() => {
+                              setHoveredService(null);
+                              setHoveredSubService(null);
+                            }}
+                          >
                             {service.subServices ? (
                               // Service with nested dropdown
                               <div className="relative">
                                 <div className="block p-3 rounded-lg hover:bg-blue-50 transition-colors cursor-pointer">
                                   <div className="flex items-start gap-3">
-                                    <div className="text-blue-800 mt-1">
-                                      {service.icon === "users" && (
-                                        <Users
-                                          className="h-5 w-5"
-                                          strokeWidth={iconStrokeWidth}
-                                        />
-                                      )}
-                                      {service.icon === "network" && (
-                                        <Network
-                                          className="h-5 w-5"
-                                          strokeWidth={iconStrokeWidth}
-                                        />
-                                      )}
-                                      {service.icon === "server" && (
-                                        <Server
-                                          className="h-5 w-5"
-                                          strokeWidth={iconStrokeWidth}
-                                        />
-                                      )}
-                                      {service.icon === "monitor-play" && (
-                                        <MonitorPlay
-                                          className="h-5 w-5"
-                                          strokeWidth={iconStrokeWidth}
-                                        />
-                                      )}
-                                      {service.icon === "cpu" && (
-                                        <Cpu
-                                          className="h-5 w-5"
-                                          strokeWidth={iconStrokeWidth}
-                                        />
-                                      )}
-                                      {service.icon === "zap" && (
-                                        <Zap
-                                          className="h-5 w-5"
-                                          strokeWidth={iconStrokeWidth}
-                                        />
-                                      )}
-                                      {service.icon === "power" && (
-                                        <Zap
-                                          className="h-5 w-5"
-                                          strokeWidth={iconStrokeWidth}
-                                        />
-                                      )}
-                                      {service.icon === "circle-ellipsis" && (
-                                        <MoreHorizontal
-                                          className="h-5 w-5"
-                                          strokeWidth={iconStrokeWidth}
-                                        />
-                                      )}
+                                  <div className="text-blue-600 mt-1">
+                                      {service.icon}
                                     </div>
                                     <div className="flex-1">
                                       <h5
@@ -269,71 +236,7 @@ const Navbar: React.FC = () => {
                                                 <div className="relative">
                                                   <div className="block p-2 rounded-lg hover:bg-blue-50 transition-colors cursor-pointer">
                                                     <div className="flex items-start gap-2">
-                                                      <div className="text-blue-600 mt-0.5">
-                                                        {subService.icon ===
-                                                          "server" && (
-                                                          <Server
-                                                            className="h-4 w-4"
-                                                            strokeWidth={
-                                                              iconStrokeWidth
-                                                            }
-                                                          />
-                                                        )}
-                                                        {subService.icon ===
-                                                          "cpu" && (
-                                                          <Cpu
-                                                            className="h-4 w-4"
-                                                            strokeWidth={
-                                                              iconStrokeWidth
-                                                            }
-                                                          />
-                                                        )}
-                                                        {subService.icon ===
-                                                          "zap" && (
-                                                          <Zap
-                                                            className="h-4 w-4"
-                                                            strokeWidth={
-                                                              iconStrokeWidth
-                                                            }
-                                                          />
-                                                        )}
-                                                        {subService.icon ===
-                                                          "circle-ellipsis" && (
-                                                          <MoreHorizontal
-                                                            className="h-4 w-4"
-                                                            strokeWidth={
-                                                              iconStrokeWidth
-                                                            }
-                                                          />
-                                                        )}
-                                                        {subService.icon ===
-                                                          "network" && (
-                                                          <Network
-                                                            className="h-4 w-4"
-                                                            strokeWidth={
-                                                              iconStrokeWidth
-                                                            }
-                                                          />
-                                                        )}
-                                                        {subService.icon ===
-                                                          "hard-drive" && (
-                                                          <HardDrive
-                                                            className="h-4 w-4"
-                                                            strokeWidth={
-                                                              iconStrokeWidth
-                                                            }
-                                                          />
-                                                        )}
-                                                        {subService.icon ===
-                                                          "shield" && (
-                                                          <Shield
-                                                            className="h-4 w-4"
-                                                            strokeWidth={
-                                                              iconStrokeWidth
-                                                            }
-                                                          />
-                                                        )}
-                                                      </div>
+                                                      {subService.icon}
                                                       <div className="flex-1">
                                                         <h6
                                                           className={`font-medium transition-colors text-sm flex items-center gap-2 ${
@@ -546,56 +449,7 @@ const Navbar: React.FC = () => {
                                 className="block p-3 rounded-lg hover:bg-blue-50 transition-colors group"
                               >
                                 <div className="flex items-start gap-3">
-                                  <div className="text-blue-600 mt-1">
-                                    {service.icon === "users" && (
-                                      <Users
-                                        className="h-5 w-5"
-                                        strokeWidth={iconStrokeWidth}
-                                      />
-                                    )}
-                                    {service.icon === "network" && (
-                                      <Network
-                                        className="h-5 w-5"
-                                        strokeWidth={iconStrokeWidth}
-                                      />
-                                    )}
-                                    {service.icon === "server" && (
-                                      <Server
-                                        className="h-5 w-5"
-                                        strokeWidth={iconStrokeWidth}
-                                      />
-                                    )}
-                                    {service.icon === "monitor-play" && (
-                                      <MonitorPlay
-                                        className="h-5 w-5"
-                                        strokeWidth={iconStrokeWidth}
-                                      />
-                                    )}
-                                    {service.icon === "cpu" && (
-                                      <Cpu
-                                        className="h-5 w-5"
-                                        strokeWidth={iconStrokeWidth}
-                                      />
-                                    )}
-                                    {service.icon === "zap" && (
-                                      <Zap
-                                        className="h-5 w-5"
-                                        strokeWidth={iconStrokeWidth}
-                                      />
-                                    )}
-                                    {service.icon === "power" && (
-                                      <Zap
-                                        className="h-5 w-5"
-                                        strokeWidth={iconStrokeWidth}
-                                      />
-                                    )}
-                                    {service.icon === "circle-ellipsis" && (
-                                      <MoreHorizontal
-                                        className="h-5 w-5"
-                                        strokeWidth={iconStrokeWidth}
-                                      />
-                                    )}
-                                  </div>
+                                  {service.icon}
                                   <div className="flex-1">
                                     <h5 className="font-medium text-gray-800 group-hover:text-blue-600 transition-colors mb-1">
                                       {service.name}
@@ -609,15 +463,14 @@ const Navbar: React.FC = () => {
                             )}
                           </li>
                         ))}
-                        </ul>
-                      </ScrollArea>
+                      </ul>
                     </div>
                   </NavigationMenuContent>
                 </NavigationMenuItem>
 
                 {/* Configuration Dropdown */}
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger className="flex items-center gap-1">
+                  <NavigationMenuTrigger className="flex items-center gap-1 bg-transparent text-white text-lg">
                     <Gpu className="h-5 w-5" strokeWidth={iconStrokeWidth} />
                     <span className="hidden md:inline">Configuration</span>
                   </NavigationMenuTrigger>
@@ -631,8 +484,7 @@ const Navbar: React.FC = () => {
                           {configurationServices.fullForm}
                         </p>
                       </div>
-                      <ScrollArea className="h-[200px] overflow-visible">
-                        <ul className="space-y-2 overflow-visible">
+                      <ul className="space-y-2 overflow-visible">
                         {configurationServices.services.map((service) => (
                           <li key={service.id}>
                             <Link
@@ -678,22 +530,21 @@ const Navbar: React.FC = () => {
                             </Link>
                           </li>
                         ))}
-                        </ul>
-                      </ScrollArea>
+                      </ul>
                     </div>
                   </NavigationMenuContent>
                 </NavigationMenuItem>
 
-                <NavigationMenuItem>
+                <NavigationMenuItem >
                   <NavigationMenuLink
                     asChild
-                    className={navigationMenuTriggerStyle()}
+                    className={`${navigationMenuTriggerStyle()} bg-transparent text-white text-lg`}
                   >
                     <Link
                       href="/about"
                       className="flex items-center flex-row gap-1"
                     >
-                      <User className="h-5 w-5" strokeWidth={iconStrokeWidth} />
+                      <User className="size-5 text-white" strokeWidth={iconStrokeWidth} />
                       <span className="hidden md:inline">About Us</span>
                     </Link>
                   </NavigationMenuLink>
@@ -702,14 +553,14 @@ const Navbar: React.FC = () => {
                 <NavigationMenuItem>
                   <NavigationMenuLink
                     asChild
-                    className={navigationMenuTriggerStyle()}
+                    className={`${navigationMenuTriggerStyle()} bg-transparent text-white text-lg`}
                   >
                     <Link
                       href="/contact"
                       className="flex items-center flex-row gap-1"
                     >
                       <PhoneCall
-                        className="h-5 w-5"
+                        className="size-5 text-white"
                         strokeWidth={iconStrokeWidth}
                       />
                       <span className="hidden md:inline">Contact Us</span>
@@ -722,11 +573,11 @@ const Navbar: React.FC = () => {
 
           {/* Right: Search and User Icons */}
           <div className="flex-shrink-0 flex items-center space-x-4">
-            <Button variant="ghost" size="icon">
-              <Search className="h-5 w-5" strokeWidth={iconStrokeWidth} />
+            <Button variant="ghost" size="icon" disabled>
+              <Search className="size-5 text-white" strokeWidth={iconStrokeWidth} />
             </Button>
-            <Button variant="ghost" size="icon">
-              <User className="h-5 w-5" strokeWidth={iconStrokeWidth} />
+            <Button variant="ghost" size="icon" disabled>
+              <User className="size-5 text-white" strokeWidth={iconStrokeWidth} />
             </Button>
           </div>
         </div>
@@ -981,7 +832,7 @@ const Navbar: React.FC = () => {
                   {/* Configuration */}
                   <div className="space-y-2">
                     <button
-                      onClick={() => 
+                      onClick={() =>
                         setExpandedService(expandedService === 999 ? null : 999)
                       }
                       className="flex items-center justify-between w-full p-4 text-left bg-white/80 hover:bg-[#669BBC]/10 rounded-lg transition-colors border border-[#669BBC]/30 hover:border-[#C1121F]/50 shadow-sm"
@@ -994,7 +845,7 @@ const Navbar: React.FC = () => {
                           System configuration and management services
                         </p>
                       </div>
-                      <ChevronRight 
+                      <ChevronRight
                         className={`h-4 w-4 text-[#C1121F] transition-transform ${
                           expandedService === 999 ? "rotate-90" : ""
                         }`}
@@ -1028,7 +879,9 @@ const Navbar: React.FC = () => {
                     onClick={() => setIsMenuOpen(false)}
                     className="block w-full p-4 text-left bg-white/80 hover:bg-[#669BBC]/10 rounded-lg transition-colors border border-[#669BBC]/30 hover:border-[#C1121F]/50 shadow-sm"
                   >
-                    <h3 className="font-medium text-[#780000] mb-1">About Us</h3>
+                    <h3 className="font-medium text-[#780000] mb-1">
+                      About Us
+                    </h3>
                     <p className="text-sm text-[#003049]/70">
                       Learn about SATYAMEBA and our mission
                     </p>

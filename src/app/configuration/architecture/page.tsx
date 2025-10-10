@@ -3,7 +3,7 @@ import { Network, Server, Database, Globe, Shield, Zap } from 'lucide-react';
 
 export default function ArchitecturePage() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50">
+    <div className="min-h-screen md:mt-32 mt-20 bg-gradient-to-br from-slate-50 to-blue-50">
       {/* Header Section */}
       <div className="bg-gradient-to-r from-blue-600 to-blue-800 text-white py-16">
         <div className="container mx-auto px-6 max-w-6xl">

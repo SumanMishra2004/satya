@@ -59,7 +59,7 @@ const Footer = () => {
             {/* Contact Info */}
             <div className='text-center md:text-left text-slate-400 text-sm'>
               <p className='font-light'>University of Engineering & Management</p>
-              <p className='font-light'>Department of Computer Science & Engineering</p>
+              <p className='font-light'>Department of CSE(IoT, CS, BT)</p>
             </div>
             
           </div>
@@ -144,7 +144,7 @@ const Footer = () => {
         <div className='mt-12 pt-8 border-t border-white/10'>
           <div className='flex flex-col md:flex-row justify-between items-center gap-4'>
             <p className='text-slate-400 text-sm font-light text-center md:text-left'>
-              © 2025 SATYAMEBA Research Center. All rights reserved.
+              © 2025 SATYAMEBA Lab. All rights reserved.
             </p>
             <div className='flex space-x-6 text-slate-500'>
               <button className='hover:text-slate-300 transition-colors text-sm font-light'>

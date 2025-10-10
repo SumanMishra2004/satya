@@ -14,13 +14,15 @@ import {
 
 const Contact = () => {
   const contactInfo = {
-    address: `SATYAMEBA Research Center
-University of Engineering & Management
+    address: `Supercomputing Lab
+    IEDC (drone & UAV)
+CSE(IoT, CS, BT)
+University of Engineering & Management, Kolkata (UEMK)
 New Town, Kolkata - 700160
 West Bengal, India`,
     phone: "+91-33-6600-1234",
-    email: "satyameba@uem.edu.in",
-    website: "www.satyameba-journal.org",
+    email: "satyameba@iem.edu.in",
+    website: "www.satyameba.co.in",
     workingHours: `Monday - Friday: 9:00 AM - 6:00 PM
 Saturday: 9:00 AM - 1:00 PM
 Sunday: Closed`
@@ -39,7 +41,7 @@ Sunday: Closed`
             </h1>
             <div className='w-32 h-0.5 bg-blue-500 mx-auto mb-8'></div>
             <p className='text-lg md:text-xl text-gray-600 font-light leading-relaxed max-w-3xl mx-auto'>
-              Get in touch with our editorial team, submit your research, or find answers to your questions. We're here to support the global research community.
+              Get in touch with our team, submit your research, or find answers to your questions. We're here to support the global research community.
             </p>
           </div>
         </div>
@@ -141,7 +143,7 @@ Sunday: Closed`
                     <textarea id='message' name='message' rows={6} placeholder='Please describe your inquiry in detail...' required className='w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors resize-none'/>
                   </div>
 
-                  <button type='submit' disabled className='w-full bg-blue-600 hover:bg-blue-700 text-white py-3 px-6 rounded-lg font-medium transition-colors flex items-center justify-center gap-2'>
+                  <button type='submit' disabled className='w-full bg-blue-600 hover:bg-blue-700 text-white py-3 px-6 rounded-lg font-medium transition-colors flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed'>
                     <Send className='w-5 h-5' /> Send Message
                   </button>
                 </form>

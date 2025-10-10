@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
-import { Gideon_Roman } from "next/font/google";
+import { Gideon_Roman, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/home/Navbar";
 import Footer from "@/components/home/Footer";
 
 
 
-const gideonRoman = Gideon_Roman({
-  variable: "--font-gideon-roman",
+const playfairDisplay = Playfair_Display({
+  variable: "--font-playfair-display",
   subsets: ["latin"],
   weight: ["400"],
 });
@@ -26,7 +26,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={` ${gideonRoman.className} antialiased`}
+        className={` ${playfairDisplay.className} antialiased`}
       >
         <Navbar />
         <main>{children}</main>

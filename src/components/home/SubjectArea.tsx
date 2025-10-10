@@ -39,15 +39,7 @@ const SubjectArea = () => {
               </p>
             </div>
 
-            {/* Card 3 - Future Computing*/}
-            <div className="bg-[#FDF0D5]/95 backdrop-blur-sm rounded-2xl p-6 lg:p-8 shadow-lg border border-[#669BBC] sticky top-16 md:top-36 z-30 w-full">
-              <h3 className="text-lg md:text-xl lg:text-2xl font-light text-[#C1121F] mb-3 lg:mb-4 tracking-wide">
-                Future Computing Vision
-              </h3>
-              <p className="text-[#003049] leading-relaxed font-light tracking-wide text-base lg:text-lg text-justify">
-                SATYAMEBA envisions advancing computational excellence by integrating supercomputing architectures with next-generation AI technologies. Focused on sustainable high-performance computing, quantum-classical hybrid systems, and edge-to-cloud acceleration, we aim to develop industry-leading solutions. Strategic collaborations and pioneering research foster a future of transformative computing, driving scientific breakthroughs and technological advancement.
-              </p>
-            </div>
+       
           </div>
 
             {/* Right Side - Technology Showcase */}
@@ -56,7 +48,7 @@ const SubjectArea = () => {
             <div className="bg-[#FDF0D5]/95 backdrop-blur-sm rounded-2xl p-6 lg:p-8 shadow-lg border border-[#669BBC] sticky top-16 md:top-36 z-10">
               <div className="relative aspect-[4/3] w-full mb-4 rounded-xl overflow-hidden">
                 <Image
-                  src="/new.jpg"
+                  src="/img2.jpg"
                   alt="Supercomputing Research"
                   fill
                   className="object-cover"
@@ -71,7 +63,7 @@ const SubjectArea = () => {
             <div className="bg-[#FDF0D5]/95 backdrop-blur-sm rounded-2xl p-6 lg:p-8 shadow-lg border border-[#669BBC] sticky top-16 md:top-36 z-20">
               <div className="relative aspect-[4/3] w-full mb-4 rounded-xl overflow-hidden">
                 <Image
-                  src="/new2.jpg"
+                  src="/img1.jpg"
                   alt="AI Acceleration"
                   fill
                   className="object-cover"
@@ -82,20 +74,7 @@ const SubjectArea = () => {
               </h4>
             </div>
 
-            {/* Box 3 */}
-            <div className="bg-[#FDF0D5]/95 backdrop-blur-sm rounded-2xl p-6 lg:p-8 shadow-lg border border-[#669BBC] sticky top-16 md:top-36 z-30">
-              <div className="relative aspect-[4/3] w-full mb-4 rounded-xl overflow-hidden">
-                <Image
-                  src="/gpu.jpg"
-                  alt="Multi-GPU Computing"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-              <h4 className="text-base lg:text-lg font-light text-[#003049] tracking-wide text-center">
-                Multi-GPU Computing
-              </h4>
-            </div>
+          
           </div>
         </div>
       </div>
