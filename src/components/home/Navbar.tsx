@@ -268,10 +268,13 @@ const Navbar: React.FC = () => {
                                                                 key={
                                                                   nestedSub.id
                                                                 }
+                                                                
                                                               >
+                                                                
                                                                 <Link
                                                                   href={`/services/${service.id}/${subService.id}/${nestedSub.id}`}
                                                                   className="block p-2 rounded-lg hover:bg-blue-50 transition-colors"
+                                                                   
                                                                 >
                                                                   <div className="flex items-start gap-2">
                                                                     

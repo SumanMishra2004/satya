@@ -206,38 +206,38 @@ export const satyamebaServices = {
       description: "High-Performance Computing access for research and development",
       icon: <User  className="text-blue-500 "/>,
       subServices: [
-        {
-          id: "iaas",
-          name: "IaaS",
-          description: "Infrastructure as a Service",
-          icon: <Server className="text-green-500 "/>,
-          subServices: [
-            {
-              id: "iaas-vm",
-              name: "Virtual Machines",
-              description: "Scalable virtual machine instances",
-              icon: <Server className="text-yellow-500 "/>
-            },
-            {
-              id: "iaas-storage",
-              name: "Storage Services",
-              description: "Cloud storage and backup solutions",
-              icon: <MemoryStick className="text-yellow-500 "/>
-            },
-            {
-              id: "iaas-network",
-              name: "Network Services",
-              description: "Virtual networking and load balancing",
-              icon: <Network className="text-yellow-500 "/>
-            },
-            {
-              id: "iaas-security",
-              name: "Security Services",
-              description: "Infrastructure security and monitoring",
-              icon: <Shield className="text-yellow-500 "/>
-            }
-          ]
-        },
+        // {
+        //   id: "iaas",
+        //   name: "IaaS",
+        //   description: "Infrastructure as a Service",
+        //   icon: <Server className="text-green-500 "/>,
+        //   subServices: [
+        //     {
+        //       id: "iaas-vm",
+        //       name: "Virtual Machines",
+        //       description: "Scalable virtual machine instances",
+        //       icon: <Server className="text-yellow-500 "/>
+        //     },
+        //     {
+        //       id: "iaas-storage",
+        //       name: "Storage Services",
+        //       description: "Cloud storage and backup solutions",
+        //       icon: <MemoryStick className="text-yellow-500 "/>
+        //     },
+        //     {
+        //       id: "iaas-network",
+        //       name: "Network Services",
+        //       description: "Virtual networking and load balancing",
+        //       icon: <Network className="text-yellow-500 "/>
+        //     },
+        //     {
+        //       id: "iaas-security",
+        //       name: "Security Services",
+        //       description: "Infrastructure security and monitoring",
+        //       icon: <Shield className="text-yellow-500 "/>
+        //     }
+        //   ]
+        // },
         {
           id: "paas",
           name: "PaaS",
