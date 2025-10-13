@@ -44,7 +44,7 @@ const Footer = () => {
                   <span className='text-[#669BBC]'>A</span>cceleration
                 </h3>
                 <div className='text-[#669BBC] text-sm font-light leading-relaxed'>
-                  <p>Advancing high-performance computing and AI</p>
+                  <p>Advanced high-performance computing and AI</p>
                   <p>through cutting-edge supercomputing technologies</p>
                 </div>
               </div>

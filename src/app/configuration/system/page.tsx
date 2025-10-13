@@ -2,14 +2,15 @@
 
 import React from 'react';
 import Link from 'next/link';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Cpu, HardDrive, Zap, Network, Server, MonitorPlay, Database, Activity, ExternalLink, Book, Package } from 'lucide-react';
+import Image from 'next/image';
 
 export default function SatyamebaSystem() {
   const specs = {
-    performance: '288 TFLOPS',
+    performance: '978 TFLOPS',
     memory: '32.584 TB',
     storage: '≈ 48.6 TB',
   };
@@ -36,9 +37,9 @@ export default function SatyamebaSystem() {
       cpu: 'AMD Ryzen 9 7950X',
       specs: '16C/32T, 4.5–5.7 GHz',
       gpu: 'RTX 4090 24GB',
-      ram: '32 GB DDR5 6600MHz',
+      ram: '32 GB DDR5 6600MHz (Corsair)',
       storage: '2 TB NVMe WD Black',
-      gradient: 'from-red-600 to-rose-600'
+      gradient: 'from-red-600 to-rose-500'
     },
     {
       name: 'Standard GPU Node',
@@ -58,12 +59,11 @@ export default function SatyamebaSystem() {
           <h1 className="md:text-6xl text-5xl font-bold bg-gradient-to-r from-red-600 via-rose-500 to-red-700 bg-clip-text text-transparent">
             SATYAMEBA
           </h1>
-          <p className="text-gray-700 text-xl">High-Performance Computing System Configuration</p>
-          <Button asChild variant="link" className="text-red-600 hover:text-red-800 bg-red-500/10 hover:bg-red-500/20 border border-red-300 hover:border-red-400 mt-4 py-7">
-            <Link href="/Satyameba System Config.pdf" target="_blank" rel="noopener noreferrer" className='text-xl font-bold '>
-              <Package className="w-4 h-4 inline-block ml-1" />Read System Configuration 
-            </Link>
-          </Button>
+            <p className="text-gray-700 text-lg  mx-auto leading-relaxed">
+              High-Performance Computing System Configuration featuring enterprise-grade infrastructure designed for computational excellence. Built with Xeon processors, GPU acceleration, and 25G networking to deliver unparalleled performance for research, AI/ML workloads, and high-throughput computing. This cutting-edge system combines scalable architecture with robust networking infrastructure, providing researchers and developers with the computational power needed for complex simulations, machine learning training, data analytics, and scientific computing applications. Engineered for reliability and performance optimization across diverse computational workloads.
+            </p>
+           
+          
         </div>
       
         {/* Key Stats */}
@@ -117,7 +117,7 @@ export default function SatyamebaSystem() {
                   <Server className="w-7 h-7" />
                   Base Specification Nodes
                 </CardTitle>
-                <CardDescription className="text-gray-600 mt-2">Dual Xeon W9-3495X · 2 Units · ASUS W790E</CardDescription>
+                <CardDescription className="text-gray-600 mt-2">Xeon W9-3495X | 2 Units | ASUS W790E</CardDescription>
               </div>
               <Badge className="bg-gradient-to-r from-red-600 to-rose-600 text-white px-4 py-2 text-lg">2U</Badge>
             </div>
@@ -141,9 +141,13 @@ export default function SatyamebaSystem() {
         <div className="grid md:grid-cols-2 gap-6">
           <Card className="bg-gradient-to-br from-red-50 to-white border-red-200 backdrop-blur shadow-xl">
             <CardHeader>
-              <CardTitle className="text-red-700 flex items-center gap-2">
+              <CardTitle className="text-red-700 flex items-center gap-2 justify-between">
+                <span>
+
                 <MonitorPlay className="w-6 h-6" />
                 Master/Service Nodes
+                </span>
+                 <Badge className="bg-gradient-to-r from-red-600 to-rose-600 text-white px-4 py-2 text-lg">2U</Badge>
               </CardTitle>
               <CardDescription className="text-gray-600">2 Units · i9-14900K · Win 11 Pro</CardDescription>
             </CardHeader>
@@ -164,9 +168,14 @@ export default function SatyamebaSystem() {
 
           <Card className="bg-gradient-to-br from-rose-50 to-white border-rose-200 backdrop-blur shadow-xl">
             <CardHeader>
-              <CardTitle className="text-rose-700 flex items-center gap-2">
+              <CardTitle className="text-rose-700 flex items-center gap-2 justify-between">
+                <span>
+
                 <MonitorPlay className="w-6 h-6" />
                 Workstation Nodes
+                
+                </span>
+                 <Badge className="bg-gradient-to-r from-red-600 to-rose-600 text-white px-4 py-2 text-lg">6U</Badge>
               </CardTitle>
               <CardDescription className="text-gray-600">6 Units · i7-14700K · Win 11 Pro</CardDescription>
             </CardHeader>
@@ -274,6 +283,24 @@ export default function SatyamebaSystem() {
               </div>
             </div>
             <p className="text-gray-600 text-sm mt-4">Connectivity: SFP Modules + DAC Cables</p>
+          </CardContent>
+         
+        </Card>
+        <Card className="bg-gradient-to-br from-red-50 to-white border-red-200 backdrop-blur shadow-xl">
+          <CardHeader>
+            <CardTitle className="text-red-700 flex items-center gap-2 text-2xl">
+              <Book className="w-6 h-6" />
+              Full System Configuration
+            </CardTitle>
+          </CardHeader>
+           <CardContent className='w-full h-auto'>
+           <Image
+              src="/Satyameba-System-Config.svg"
+              alt="Network Diagram"
+              width={800}
+              height={400}
+              className="w-full h-auto rounded-lg border border-red-200 shadow-md"
+            />
           </CardContent>
         </Card>
       </div>
