@@ -16,7 +16,6 @@ const Contact = () => {
   const contactInfo = {
     address: `Supercomputing Lab
     IEDC (drone & UAV)
-
 University of Engineering & Management, Kolkata (UEMK)
 New Town, Kolkata - 700160
 West Bengal, India`,
@@ -27,7 +26,6 @@ West Bengal, India`,
 Saturday: 9:00 AM - 1:00 PM
 Sunday: Closed`
   }
-
  
 
   return (
@@ -50,9 +48,9 @@ Sunday: Closed`
       {/* Main Contact Information */}
       <section className='py-16'>
         <div className='max-w-7xl mx-auto px-4 md:px-8 lg:px-16'>
-          <div className='grid lg:grid-cols-2 gap-12'>
+          <div className={`grid lg:grid-cols-2 gap-12 `}>
             {/* Contact Details */}
-            <div>
+            <div >
               <h2 className='text-3xl font-light text-gray-800 mb-8'>Get in Touch</h2>
               <div className='space-y-8'>
                 {/* Address */}

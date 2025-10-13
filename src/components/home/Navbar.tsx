@@ -257,7 +257,7 @@ const Navbar: React.FC = () => {
                                                   {/* Second level nested dropdown */}
                                                   {hoveredSubService ===
                                                     subService.id && (
-                                                    <div className="absolute left-full top-0 ml-2 z-[100] animate-in fade-in slide-in-from-left-2 duration-200">
+                                                    <div className="absolute left-[95%] top-0 ml-2 z-[100] animate-in fade-in slide-in-from-left-2 duration-200">
                                                       <div className="bg-white rounded-lg shadow-xl border border-gray-200 p-3 min-w-[250px]">
                                                         <ul className="space-y-2">
                                                           {subService.subServices.map(

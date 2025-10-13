@@ -5,12 +5,13 @@ import Navbar from "@/components/home/Navbar";
 import Footer from "@/components/home/Footer";
 
 
+import { Merriweather } from 'next/font/google'
 
-const playfairDisplay = Playfair_Display({
-  variable: "--font-playfair-display",
-  subsets: ["latin"],
-  weight: ["400"],
-});
+const merriweather = Merriweather({
+  weight:['300','400','700'],
+  subsets:['latin']
+})
+
 
 export const metadata: Metadata = {
   title: "International Journal of Advanced Research & Innovation",
@@ -34,7 +35,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={` ${playfairDisplay.className} antialiased`}
+        className={` ${merriweather.className} antialiased`}
       >
         <Navbar />
         <main>{children}</main>

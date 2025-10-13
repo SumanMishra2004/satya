@@ -48,10 +48,10 @@ const SubjectArea = () => {
             <div className="bg-[#FDF0D5]/95 backdrop-blur-sm rounded-2xl p-6 lg:p-8 shadow-lg border border-[#669BBC] sticky top-16 md:top-36 z-10">
               <div className="relative aspect-[4/3] w-full mb-4 rounded-xl overflow-hidden">
                 <Image
-                  src="/img2.jpg"
+                  src="/img3.jpg"
                   alt="Supercomputing Research"
                   fill
-                  className="object-cover"
+                  className="object-contain"
                 />
               </div>
               <h4 className="text-base lg:text-lg font-light text-[#003049] tracking-wide text-center">
@@ -61,12 +61,12 @@ const SubjectArea = () => {
 
             {/* Box 2 */}
             <div className="bg-[#FDF0D5]/95 backdrop-blur-sm rounded-2xl p-6 lg:p-8 shadow-lg border border-[#669BBC] sticky top-16 md:top-36 z-20">
-              <div className="relative aspect-[4/3] w-full mb-4 rounded-xl overflow-hidden">
+              <div className="relative aspect-[4/3]  mb-4 rounded-xl overflow-hidden">
                 <Image
-                  src="/img1.jpg"
+                  src="/img2.jpg"
                   alt="AI Acceleration"
                   fill
-                  className="object-cover"
+                  className="object-cover "
                 />
               </div>
               <h4 className="text-base lg:text-lg font-light text-[#003049] tracking-wide text-center">

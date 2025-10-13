@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { Cpu, HardDrive, Zap, Network, Server, MonitorPlay, Database, Activity } from 'lucide-react';
+import { Cpu, HardDrive, Zap, Network, Server, MonitorPlay, Database, Activity, ExternalLink, Book, Package } from 'lucide-react';
 
 export default function SatyamebaSystem() {
   const specs = {
@@ -55,20 +55,17 @@ export default function SatyamebaSystem() {
       <div className="max-w-7xl mx-auto space-y-8">
         {/* Header */}
         <div className="text-center space-y-4 mb-12">
-          <h1 className="md:text-6xl text-5xl font-bold bg-gradient-to-r from-red-600 via-rose-500 to-red-700 bg-clip-text text-transparent animate-pulse">
+          <h1 className="md:text-6xl text-5xl font-bold bg-gradient-to-r from-red-600 via-rose-500 to-red-700 bg-clip-text text-transparent">
             SATYAMEBA
           </h1>
           <p className="text-gray-700 text-xl">High-Performance Computing System Configuration</p>
+          <Button asChild variant="link" className="text-red-600 hover:text-red-800 bg-red-500/10 hover:bg-red-500/20 border border-red-300 hover:border-red-400 mt-4 py-7">
+            <Link href="/Satyameba System Config.pdf" target="_blank" rel="noopener noreferrer" className='text-xl font-bold '>
+              <Package className="w-4 h-4 inline-block ml-1" />Read System Configuration 
+            </Link>
+          </Button>
         </div>
-        {/* View Configuration Button */}
-        <div className="text-center mb-8">
-          <Link href="/configuration/system/pdf">
-            <Button className="bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-700 hover:to-rose-700 text-white font-semibold py-3 px-8 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl flex items-center gap-2">
-              <MonitorPlay className="w-5 h-5" />
-              View System Configuration PDF
-            </Button>
-          </Link>
-        </div>
+      
         {/* Key Stats */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <Card className="bg-gradient-to-br from-red-100 to-rose-50 border-red-300 hover:scale-105 transition-transform shadow-lg">

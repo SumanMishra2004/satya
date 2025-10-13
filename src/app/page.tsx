@@ -28,10 +28,10 @@ function HomePage() {
         <div className='relative z-10 flex items-center min-h-screen pt-32 md:pt-40'>
         {/* Centered Content - SATYAMEBA Information */}
         <div className='w-full px-4 md:px-8 lg:px-16'>
-          <div className='w-full text-center max-w-4xl mx-auto'>            
+          <div className='w-full text-center max-w-7xl mx-auto'>            
             {/* SATYAMEBA Full Form and Description */}
             <div className='text-[#FDF0D5]'>
-              <h1 className='text-2xl md:text-3xl lg:text-5xl font-semibold tracking-wide leading-snug mb-8'>
+              <h1 className='text-2xl md:text-3xl lg:text-6xl font-semibold tracking-wide leading-snug mb-8'>
                 <span className='text-[#669BBC] font-medium'>S</span>upercomputing{' '}
                 <span className='text-[#669BBC] font-medium'>A</span>rchitecture for{' '}
                 <span className='text-[#669BBC] font-medium'>T</span>ransformative{' '}
