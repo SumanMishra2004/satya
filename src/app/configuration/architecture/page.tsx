@@ -27,7 +27,7 @@ export default function ArchitecturePage() {
       {/* Main Content */}
       <div className="container mx-auto px-6 py-16 max-w-6xl">
         <Image
-          src="/Super-comp.svg"
+          src="/Super-Comp.svg"
           alt="System Architecture"
           width={1200}
           height={800}
