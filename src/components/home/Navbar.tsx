@@ -271,8 +271,8 @@ const Navbar: React.FC = () => {
                                                                 
                                                               >
                                                                 
-                                                                <Link
-                                                                  href={`/services/${service.id}/${subService.id}/${nestedSub.id}`}
+                                                                <div
+                                                                
                                                                   className="block p-2 rounded-lg hover:bg-blue-50 transition-colors"
                                                                    
                                                                 >
@@ -291,7 +291,7 @@ const Navbar: React.FC = () => {
                                                                       </p>
                                                                     </div>
                                                                   </div>
-                                                                </Link>
+                                                                </div>
                                                               </li>
                                                             )
                                                           )}
@@ -766,3 +766,4 @@ const Navbar: React.FC = () => {
 };
 
 export default Navbar;
+
