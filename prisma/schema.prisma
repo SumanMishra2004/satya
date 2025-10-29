@@ -1,0 +1,52 @@
+
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider ="cockroachdb" // works for both CockroachDB and PostgreSQL
+  url      = env("DATABASE_URL")
+}
+
+// ===============================
+//  ENUMS
+// ===============================
+
+enum Role {
+  USER
+  ADMIN
+}
+
+// ===============================
+//  USER TABLE
+// ===============================
+
+model User {
+  id                String   @id @default(uuid())
+  name              String?
+  email             String?  @unique
+  password          String?  // Hashed password for credential login
+  image             String?
+  role              Role     @default(USER)
+  emailVerified     DateTime?
+  verificationToken String?  // Token for email verification or password reset
+  isActive          Boolean  @default(true)
+
+  sessions          Session[]
+
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+}
+
+// ===============================
+//  SESSION TABLE
+// ===============================
+
+model Session {
+  id           String   @id @default(uuid())
+  sessionToken String   @unique
+  userId       String
+  expires      DateTime
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}

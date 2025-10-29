@@ -14,10 +14,10 @@ const merriweather = Merriweather({
 
 
 export const metadata: Metadata = {
-  title: "SATYAMEBA",
-                
+  title: "SATYAMEBA",             
   description: "Supercomputing Architecture for Transformative Yield in AI and Multi-GPU Engine Based Acceleration",
   keywords: "academic journal, research, innovation, ISSN, peer review",
+  
   
 };
 

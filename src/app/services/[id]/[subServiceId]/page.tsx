@@ -2,7 +2,7 @@ import React from 'react'
 import { notFound } from 'next/navigation'
 import { Users, Network, Server, Cpu, Zap, ArrowLeft, MoreHorizontal, HardDrive, Shield } from 'lucide-react'
 import Link from 'next/link'
-import { satyamebaServices } from '@/data/sampleData'
+import { satyamebaServices } from '@/data/NavData'
 
 interface SubServicePageProps {
   params: Promise<{
