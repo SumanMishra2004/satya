@@ -1,5 +1,6 @@
 "use client"
 
+import { useEffect } from "react"
 import { useSession, signOut } from "next-auth/react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
@@ -11,6 +12,19 @@ import toast from "react-hot-toast"
 export default function ProfilePage() {
   const { data: session, status } = useSession()
   const { isLoading } = useRequireAuth()
+
+  // Debug logging for production
+  useEffect(() => {
+    if (process.env.NODE_ENV === 'production') {
+      console.log('👤 Profile Page - Session State:', {
+        status,
+        hasSession: !!session,
+        sessionUser: session?.user,
+        isLoading,
+        timestamp: new Date().toISOString()
+      })
+    }
+  }, [session, status, isLoading])
 
   const handleSignOut = async () => {
     try {

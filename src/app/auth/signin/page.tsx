@@ -55,6 +55,25 @@ function SignInForm() {
         }
       } else if (result?.ok) {
         toast.success("Signed in successfully!")
+        
+        // Debug logging for production
+        if (process.env.NODE_ENV === 'production') {
+          // Get session after successful signin
+          setTimeout(async () => {
+            try {
+              const { getSession } = await import("next-auth/react")
+              const session = await getSession()
+              console.log('🎉 Client-side session after signin:', {
+                session,
+                timestamp: new Date().toISOString(),
+                callbackUrl
+              })
+            } catch (error) {
+              console.log('❌ Error getting session:', error)
+            }
+          }, 1000)
+        }
+        
         router.push(callbackUrl)
         router.refresh()
       }
