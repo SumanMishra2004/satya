@@ -22,6 +22,10 @@ export function useAuth(requireAuth = true) {
   }
 }
 
+// Simplified version - just returns loading state
 export function useRequireAuth() {
-  return useAuth(true)
+  const { status } = useSession()
+  return {
+    isLoading: status === "loading"
+  }
 }

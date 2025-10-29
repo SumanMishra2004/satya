@@ -41,12 +41,17 @@ export default function ProfilePage() {
         <div className="text-center">
           <Loader2 className="h-8 w-8 animate-spin mx-auto mb-4" />
           <p>Loading profile...</p>
+          {process.env.NODE_ENV === 'production' && (
+            <p className="text-xs text-gray-500 mt-2">
+              Session status: {status}
+            </p>
+          )}
         </div>
       </div>
     )
   }
 
-  if (!session) {
+  if (!session && status === "unauthenticated") {
     return (
       <div className="min-h-screen flex items-center justify-center">
         <Card className="w-full max-w-md">
@@ -54,6 +59,45 @@ export default function ProfilePage() {
             <CardTitle>Access Denied</CardTitle>
             <CardDescription>You need to be signed in to view this page.</CardDescription>
           </CardHeader>
+          <CardContent>
+            <div className="space-y-4">
+              <Button 
+                onClick={() => window.location.href = '/auth/signin'} 
+                className="w-full"
+              >
+                Go to Sign In
+              </Button>
+              {process.env.NODE_ENV === 'production' && (
+                <div className="text-xs text-gray-500">
+                  <p>Debug info:</p>
+                  <p>Status: {status}</p>
+                  <p>Session: {session ? 'exists' : 'null'}</p>
+                </div>
+              )}
+            </div>
+          </CardContent>
+        </Card>
+      </div>
+    )
+  }
+
+  // At this point, we should have a valid session
+  if (!session) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <Card className="w-full max-w-md">
+          <CardHeader>
+            <CardTitle>Session Error</CardTitle>
+            <CardDescription>There was an issue loading your session. Please try signing in again.</CardDescription>
+          </CardHeader>
+          <CardContent>
+            <Button 
+              onClick={() => window.location.href = '/auth/signin'} 
+              className="w-full"
+            >
+              Sign In Again
+            </Button>
+          </CardContent>
         </Card>
       </div>
     )
@@ -153,20 +197,41 @@ export default function ProfilePage() {
 
         <Card>
           <CardHeader>
-            <CardTitle>Security Information</CardTitle>
-            <CardDescription>Account security and login information</CardDescription>
+            <CardTitle>Account Status</CardTitle>
+            <CardDescription>Your account verification status</CardDescription>
           </CardHeader>
           <CardContent>
             <div className="space-y-4">
-              <div className="flex items-center justify-between p-4 bg-green-50 border border-green-200 rounded-lg">
+              <div className={`flex items-center justify-between p-4 border rounded-lg ${
+                session.user?.emailVerified ? 'bg-green-50 border-green-200' : 'bg-yellow-50 border-yellow-200'
+              }`}>
                 <div className="flex items-center space-x-3">
-                  <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                  <span className="text-sm font-medium">Email Verified</span>
+                  <div className={`w-2 h-2 rounded-full ${
+                    session.user?.emailVerified ? 'bg-green-500' : 'bg-yellow-500'
+                  }`}></div>
+                  <span className="text-sm font-medium">Email Verification</span>
                 </div>
-                <Badge variant="outline" className="bg-green-100 text-green-800">
-                  Verified
+                <Badge variant="outline" className={
+                  session.user?.emailVerified 
+                    ? 'bg-green-100 text-green-800' 
+                    : 'bg-yellow-100 text-yellow-800'
+                }>
+                  {session.user?.emailVerified ? 'Verified' : 'Not Verified'}
                 </Badge>
               </div>
+
+              {!session.user?.emailVerified && (
+                <div className="text-sm text-yellow-700 bg-yellow-50 p-3 rounded-lg">
+                  <p>Your email is not verified. Some features may be limited.</p>
+                  <Button 
+                    variant="link" 
+                    className="h-auto p-0 text-yellow-700 underline"
+                    onClick={() => toast("Contact support to verify your email")}
+                  >
+                    Need help with verification?
+                  </Button>
+                </div>
+              )}
 
               <div className="flex items-center justify-between p-4 bg-blue-50 border border-blue-200 rounded-lg">
                 <div className="flex items-center space-x-3">

@@ -21,10 +21,7 @@ const signupSchema = z.object({
     .min(8, "Password must be at least 8 characters")
     .regex(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]/, 
       "Password must contain at least one uppercase letter, one lowercase letter, one number, and one special character"),
-  confirmPassword: z.string()
-}).refine((data) => data.password === data.confirmPassword, {
-  message: "Passwords don't match",
-  path: ["confirmPassword"],
+  skipVerification: z.boolean().optional()
 })
 
 type SignupFormData = z.infer<typeof signupSchema>
@@ -32,9 +29,9 @@ type SignupFormData = z.infer<typeof signupSchema>
 export default function SignUpPage() {
   const [isLoading, setIsLoading] = useState(false)
   const [showPassword, setShowPassword] = useState(false)
-  const [showConfirmPassword, setShowConfirmPassword] = useState(false)
   const [googleLoading, setGoogleLoading] = useState(false)
   const [success, setSuccess] = useState(false)
+  const [skipVerification, setSkipVerification] = useState(false)
   const router = useRouter()
 
   const {
@@ -61,17 +58,33 @@ export default function SignUpPage() {
           name: data.name,
           email: data.email,
           password: data.password,
+          skipVerification: skipVerification
         }),
       })
 
       const result = await response.json()
 
       if (response.ok) {
-        setSuccess(true)
-        toast.success(result.message)
+        if (skipVerification) {
+          toast.success("Account created! You can now sign in.")
+          // Auto sign in the user
+          const signInResult = await signIn("credentials", {
+            email: data.email,
+            password: data.password,
+            redirect: false,
+          })
+          
+          if (signInResult?.ok) {
+            router.push("/profile")
+          } else {
+            router.push("/auth/signin")
+          }
+        } else {
+          setSuccess(true)
+          toast.success(result.message)
+        }
       } else {
         if (result.details) {
-          // Show validation errors
           Object.entries(result.details).forEach(([field, messages]) => {
             if (Array.isArray(messages)) {
               messages.forEach(message => toast.error(`${field}: ${message}`))
@@ -97,28 +110,6 @@ export default function SignUpPage() {
       setGoogleLoading(false)
     }
   }
-
-  const getPasswordStrength = (password: string) => {
-    if (!password) return { strength: 0, label: "", color: "" }
-    
-    let strength = 0
-    const checks = [
-      password.length >= 8,
-      /[a-z]/.test(password),
-      /[A-Z]/.test(password),
-      /\d/.test(password),
-      /[@$!%*?&]/.test(password),
-    ]
-    
-    strength = checks.filter(Boolean).length
-    
-    if (strength <= 2) return { strength, label: "Weak", color: "bg-red-500" }
-    if (strength <= 3) return { strength, label: "Fair", color: "bg-yellow-500" }
-    if (strength <= 4) return { strength, label: "Good", color: "bg-blue-500" }
-    return { strength, label: "Strong", color: "bg-green-500" }
-  }
-
-  const passwordStrength = getPasswordStrength(password || "")
 
   if (success) {
     return (
@@ -162,10 +153,11 @@ export default function SignUpPage() {
         <CardHeader className="space-y-1">
           <CardTitle className="text-2xl font-bold text-center">Create an account</CardTitle>
           <CardDescription className="text-center">
-            Enter your details to create your account
+            Choose your preferred sign up method
           </CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">
+          {/* Google OAuth - Simple and no password needed */}
           <Button
             variant="outline"
             className="w-full"
@@ -194,7 +186,7 @@ export default function SignUpPage() {
                 />
               </svg>
             )}
-            Continue with Google
+            Continue with Google (Recommended)
           </Button>
 
           <div className="relative">
@@ -203,7 +195,7 @@ export default function SignUpPage() {
             </div>
             <div className="relative flex justify-center text-xs uppercase">
               <span className="bg-background px-2 text-muted-foreground">
-                Or continue with email
+                Or create with email
               </span>
             </div>
           </div>
@@ -261,53 +253,23 @@ export default function SignUpPage() {
                   )}
                 </Button>
               </div>
-              
-              {password && (
-                <div className="space-y-2">
-                  <div className="flex items-center space-x-2">
-                    <div className="flex-1 h-2 bg-gray-200 rounded-full overflow-hidden">
-                      <div
-                        className={`h-full transition-all duration-300 ${passwordStrength.color}`}
-                        style={{ width: `${(passwordStrength.strength / 5) * 100}%` }}
-                      />
-                    </div>
-                    <span className="text-xs font-medium">{passwordStrength.label}</span>
-                  </div>
-                </div>
-              )}
-              
               {errors.password && (
                 <p className="text-sm text-red-500">{errors.password.message}</p>
               )}
             </div>
 
-            <div className="space-y-2">
-              <Label htmlFor="confirmPassword">Confirm Password</Label>
-              <div className="relative">
-                <Input
-                  id="confirmPassword"
-                  type={showConfirmPassword ? "text" : "password"}
-                  placeholder="Confirm your password"
-                  {...register("confirmPassword")}
-                  className={errors.confirmPassword ? "border-red-500" : ""}
-                />
-                <Button
-                  type="button"
-                  variant="ghost"
-                  size="sm"
-                  className="absolute right-0 top-0 h-full px-3 py-2 hover:bg-transparent"
-                  onClick={() => setShowConfirmPassword(!showConfirmPassword)}
-                >
-                  {showConfirmPassword ? (
-                    <EyeOff className="h-4 w-4" />
-                  ) : (
-                    <Eye className="h-4 w-4" />
-                  )}
-                </Button>
-              </div>
-              {errors.confirmPassword && (
-                <p className="text-sm text-red-500">{errors.confirmPassword.message}</p>
-              )}
+            {/* Simple option to skip email verification */}
+            <div className="flex items-center space-x-2">
+              <input
+                type="checkbox"
+                id="skipVerification"
+                checked={skipVerification}
+                onChange={(e) => setSkipVerification(e.target.checked)}
+                className="h-4 w-4"
+              />
+              <Label htmlFor="skipVerification" className="text-sm">
+                Skip email verification (Sign in immediately)
+              </Label>
             </div>
 
             <Button type="submit" className="w-full" disabled={isLoading}>
