@@ -3,7 +3,7 @@ import { Gideon_Roman, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/home/Navbar";
 import Footer from "@/components/home/Footer";
-
+import { Providers } from "@/components/providers";
 
 import { Merriweather } from 'next/font/google'
 
@@ -31,9 +31,11 @@ export default function RootLayout({
       <body
         className={` ${merriweather.className} antialiased`}
       >
-        <Navbar />
-        <main>{children}</main>
-        <Footer/>
+        <Providers>
+        
+          <main>{children}</main>
+         
+        </Providers>
       </body>
     </html>
   );
