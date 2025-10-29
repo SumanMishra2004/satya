@@ -27,7 +27,7 @@ function SignInForm() {
   const [googleLoading, setGoogleLoading] = useState(false)
   const router = useRouter()
   const searchParams = useSearchParams()
-  const callbackUrl = searchParams.get("callbackUrl") || "/"
+  const callbackUrl = searchParams.get("callbackUrl") || "/profile"
 
   const {
     register,

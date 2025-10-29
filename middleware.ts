@@ -17,8 +17,12 @@ export async function middleware(request: NextRequest) {
     "/contact",
     "/services",
     "/configuration",
+  ]
+
+  // Auth pages that should be accessible when not logged in
+  const authPages = [
     "/auth/signin",
-    "/auth/signup",
+    "/auth/signup", 
     "/auth/forgot-password",
     "/auth/reset-password",
     "/auth/verify-email",
@@ -29,16 +33,35 @@ export async function middleware(request: NextRequest) {
     pathname === path || pathname.startsWith(path + "/")
   )
 
-  // If it's a protected path and user is not logged in, redirect to signin
-  if (!isPublicPath && !isLoggedIn) {
+  // Check if it's an auth page
+  const isAuthPage = authPages.some(path => 
+    pathname === path || pathname.startsWith(path + "/")
+  )
+
+  // Special handling for profile page
+  if (pathname === "/profile") {
+    if (!isLoggedIn) {
+      const signinUrl = new URL("/auth/signin", request.url)
+      signinUrl.searchParams.set("callbackUrl", request.url)
+      return NextResponse.redirect(signinUrl)
+    }
+    // Allow access to profile if logged in, regardless of email verification status
+    // The profile page itself can handle showing verification status
+    return NextResponse.next()
+  }
+
+  // If it's a protected path (not public, not auth) and user is not logged in
+  if (!isPublicPath && !isAuthPage && !isLoggedIn) {
     const signinUrl = new URL("/auth/signin", request.url)
     signinUrl.searchParams.set("callbackUrl", request.url)
     return NextResponse.redirect(signinUrl)
   }
 
-  // If user is logged in and trying to access auth pages, redirect to home
-  if (isLoggedIn && pathname.startsWith("/auth/")) {
-    return NextResponse.redirect(new URL("/", request.url))
+  // If user is logged in and trying to access auth pages (except verify-email)
+  // Allow access to verify-email even when logged in for the verification flow
+  if (isLoggedIn && isAuthPage && !pathname.startsWith("/auth/verify-email")) {
+    // Redirect to profile after successful authentication instead of home
+    return NextResponse.redirect(new URL("/profile", request.url))
   }
 
   return NextResponse.next()

@@ -106,6 +106,19 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
 
       return true
     },
+    async redirect({ url, baseUrl }) {
+      // Handle redirects after successful authentication
+      // If the url is a relative path, prepend baseUrl
+      if (url.startsWith("/")) {
+        return `${baseUrl}${url}`
+      }
+      // If the url is a callback URL on the same origin, allow it
+      if (new URL(url).origin === baseUrl) {
+        return url
+      }
+      // Default redirect to profile after successful authentication
+      return `${baseUrl}/profile`
+    },
   },
   events: {
     async linkAccount({ user }) {

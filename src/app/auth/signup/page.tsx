@@ -91,7 +91,7 @@ export default function SignUpPage() {
   const handleGoogleSignIn = async () => {
     setGoogleLoading(true)
     try {
-      await signIn("google", { callbackUrl: "/" })
+      await signIn("google", { callbackUrl: "/profile" })
     } catch (error) {
       toast.error("Failed to sign in with Google")
       setGoogleLoading(false)
