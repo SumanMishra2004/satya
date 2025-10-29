@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState, useEffect, Suspense } from "react"
 import Link from "next/link"
 import { useSearchParams } from "next/navigation"
 import { Button } from "@/components/ui/button"
@@ -9,6 +9,14 @@ import toast from "react-hot-toast"
 import { Loader2, CheckCircle, XCircle } from "lucide-react"
 
 export default function VerifyEmailPage() {
+  return (
+    <Suspense fallback={<LoadingFallback />}>
+      <VerifyEmailForm />
+    </Suspense>
+  )
+}
+
+function VerifyEmailForm() {
   const [isLoading, setIsLoading] = useState(true)
   const [success, setSuccess] = useState<boolean | null>(null)
   const [message, setMessage] = useState("")
@@ -142,6 +150,18 @@ export default function VerifyEmailPage() {
             </Button>
           </Link>
         </CardFooter>
+      </Card>
+    </div>
+  )
+}
+
+function LoadingFallback() {
+  return (
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 to-indigo-100 p-4">
+      <Card className="w-full max-w-md shadow-xl">
+        <CardContent className="flex items-center justify-center p-8">
+          <Loader2 className="h-8 w-8 animate-spin" />
+        </CardContent>
       </Card>
     </div>
   )
