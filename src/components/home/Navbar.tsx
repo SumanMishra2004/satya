@@ -53,7 +53,7 @@ import {
 
 import Image from "next/image";
 import Link from "next/link";
-import { satyamebaServices, configurationServices } from "@/data/sampleData";
+import { satyamebaServices, configurationServices } from "@/data/NavData";
 import { Gravitas_One, Noto_Serif_Armenian } from "next/font/google";
 
 const UemLogo = () => (
