@@ -429,7 +429,7 @@ const Navbar: React.FC = () => {
           </div>
 
           {/* Right: Search and User Icons */}
-        <Button variant="ghost" size="md" className="text-white hover:text-[#FDF0D5] bg-accent/10 hover:bg-accent/20 transition-colors">
+        <Button variant="ghost" size="lg" className="text-white hover:text-[#FDF0D5] bg-accent/10 hover:bg-accent/20 transition-colors">
           <Link href="https://nanometer-curtsy-seismic.ngrok-free.dev/portal" className="flex items-center gap-1" target="_blank">
           HPC Access Portal
           </Link>
