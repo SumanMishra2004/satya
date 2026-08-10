@@ -429,9 +429,9 @@ const Navbar: React.FC = () => {
           </div>
 
           {/* Right: Search and User Icons */}
-        <Button variant="ghost" size="sm" className="text-white hover:text-[#FDF0D5] bg-accent/10 hover:bg-accent/20 transition-colors">
+        <Button variant="ghost" size="md" className="text-white hover:text-[#FDF0D5] bg-accent/10 hover:bg-accent/20 transition-colors">
           <Link href="https://nanometer-curtsy-seismic.ngrok-free.dev/portal" className="flex items-center gap-1" target="_blank">
-          GPU Access Portal
+          HPC Access Portal
           </Link>
         </Button>
         </div>
@@ -758,7 +758,7 @@ const Navbar: React.FC = () => {
                     onClick={() => setIsMenuOpen(false)}
                     className="block w-full p-4 text-left bg-white/80 hover:bg-[#669BBC]/10 rounded-lg transition-colors border border-[#669BBC]/30 hover:border-[#C1121F]/50 shadow-sm"
                   >
-                    <h3 className="font-medium text-[#780000] mb-1">GPU Access Portal</h3>
+                    <h3 className="font-medium text-[#780000] mb-1">HPC Access Portal</h3>
                     <p className="text-sm text-[#003049]/70">
                       Access the GPU resources and manage your allocations
                     </p>
