@@ -429,14 +429,11 @@ const Navbar: React.FC = () => {
           </div>
 
           {/* Right: Search and User Icons */}
-          <div className="flex-shrink-0 flex items-center space-x-4">
-            <Button variant="ghost" size="icon" disabled>
-              <Search className="size-5 text-white" strokeWidth={iconStrokeWidth} />
-            </Button>
-            <Button variant="ghost" size="icon" disabled>
-              <User className="size-5 text-white" strokeWidth={iconStrokeWidth} />
-            </Button>
-          </div>
+        <Button variant="ghost" size="sm" className="text-white hover:text-[#FDF0D5] bg-accent/10 hover:bg-accent/20 transition-colors">
+          <Link href="https://nanometer-curtsy-seismic.ngrok-free.dev/portal" className="flex items-center gap-1" target="_blank">
+          GPU Access Portal
+          </Link>
+        </Button>
         </div>
       </div>
 
@@ -753,6 +750,17 @@ const Navbar: React.FC = () => {
                     <h3 className="font-medium text-[#780000] mb-1">Contact</h3>
                     <p className="text-sm text-[#003049]/70">
                       Get in touch with our team
+                    </p>
+                  </Link>
+                  {/* Contact */}
+                  <Link
+                    href="https://nanometer-curtsy-seismic.ngrok-free.dev/portal"
+                    onClick={() => setIsMenuOpen(false)}
+                    className="block w-full p-4 text-left bg-white/80 hover:bg-[#669BBC]/10 rounded-lg transition-colors border border-[#669BBC]/30 hover:border-[#C1121F]/50 shadow-sm"
+                  >
+                    <h3 className="font-medium text-[#780000] mb-1">GPU Access Portal</h3>
+                    <p className="text-sm text-[#003049]/70">
+                      Access the GPU resources and manage your allocations
                     </p>
                   </Link>
                 </div>
